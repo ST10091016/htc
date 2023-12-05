@@ -25,11 +25,7 @@ const nextConfig = {
       {
         protocol: "https",
         hostname: "flowbite.com",
-      },
-      {
-        protocol: "https",
-        hostname: "joburg-north-church.vercel.app",
-      },
+      }
     ],
   },
 };
