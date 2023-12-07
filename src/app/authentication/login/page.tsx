@@ -59,6 +59,18 @@ export default function Page() {
               </h5>
               <div>
                 <label className="block mb-2 text-sm font-medium text-white">
+                  Role
+                </label>
+                <select
+                  className="bg-gray-50 bg-opacity-20 text-white text-sm rounded-lg block w-full p-2"
+                  name="role"
+                  required>
+                  <option>CM</option>
+                  <option>Admin</option>
+                </select>
+              </div>
+              <div>
+                <label className="block mb-2 text-sm font-medium text-white">
                   Email
                 </label>
                 <input

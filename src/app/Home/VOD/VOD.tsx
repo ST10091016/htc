@@ -3,25 +3,19 @@ import React from 'react'
 export default function VOD() {
   return (
     <div>
-    <div
-      className="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">
-      <img
-        className="rounded-lg"
-        src="https://tecdn.b-cdn.net/img/new/slides/017.webp"
-        alt="" />
-      <div className="absolute top-0 p-6">
-        <h5 className="mb-2 text-xl font-medium leading-tight text-white">
-          Card title
-        </h5>
-        <p className="mb-4 text-base text-white">
-          This is a wider card with supporting text below as a natural
-          lead-in to additional content. This content is a little bit
-          longer.
-        </p>
-        <p className="text-base text-white">
-          <small className="text-white">Last updated 3 mins ago</small>
-        </p>
+
+      <div id="animation-carousel" className="relative w-full" data-carousel="static">
+        <div className="relative bg-[url('https://images.pexels.com/photos/946186/pexels-photo-946186.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] bg-cover bg-gray-500 bg-blend-multiply bg-center mx-16 overflow-hidden rounded-lg md:h-60">
+          <div >
+
+            <p className="text-xl p-20 font-semibold text-center text-white">
+              It is trusted that God is going to expand His kingdom in the whole world through this institution as each member of the H.T.C discover their ministry and develop it to full potential.
+            </p>
+
+          </div>
+
+        </div>
       </div>
-    </div></div>
+    </div>
   )
 }
