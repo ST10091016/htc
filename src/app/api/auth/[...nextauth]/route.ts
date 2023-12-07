@@ -1,8 +1,8 @@
 import NextAuth from "next-auth/next";
+import prisma from "@/lib/prisma/prismadb";
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcrypt";
-import prisma from "@/lib/prisma/prismadb";
 
 export const authOptions: any = {
   adapter: PrismaAdapter(prisma),
@@ -25,11 +25,12 @@ export const authOptions: any = {
           throw new Error("Please enter an email and password");
         }
 
-        if(!credentials.role || credentials.role !== "admin" || credentials.role !== "centerMember" || credentials.role !== "secretary" || credentials.role !== "convert") {
+        if(!credentials.role) {
           throw new Error("Please select a role");
         }
         
         if(credentials.role === "admin") {
+          console.log("admin selected")
           // check to see if user exists
           const user = await prisma.admin.findUnique({
             where: {
@@ -55,6 +56,7 @@ export const authOptions: any = {
           return user;
         }
         else if(credentials.role === "centerMember") {
+          console.log("center member selected")
           // check to see if user exists
           const user = await prisma.center_Member.findUnique({
             where: {
@@ -80,6 +82,7 @@ export const authOptions: any = {
           return user;
         }
         else if(credentials.role === "secretary") {
+          console.log("secretary selected")
           // check to see if user exists
           const user = await prisma.secretary.findUnique({
             where: {
@@ -105,6 +108,7 @@ export const authOptions: any = {
           return user;
         }
         else if(credentials.role === "convert") {
+          console.log("convert selected")
           // check to see if user exists
           const user = await prisma.convert.findUnique({
             where: {
