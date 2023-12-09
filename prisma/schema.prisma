@@ -11,6 +11,8 @@ model Center_Member {
   id             String   @id @default(cuid()) @map("_id")
   email          String   @unique
   hashedPassword String
+  centerId       String
+  center         Center   @relation(fields: [centerId], references: [id])
   createdAt      DateTime @default(now())
   updatedAt      DateTime @updatedAt
 }
@@ -19,6 +21,8 @@ model Spiritual_leader {
   id             String   @id @default(cuid()) @map("_id")
   email          String   @unique
   hashedPassword String
+  centerId       String
+  center         Center   @relation(fields: [centerId], references: [id])
   createdAt      DateTime @default(now())
   updatedAt      DateTime @updatedAt
 }
@@ -27,6 +31,8 @@ model Convert {
   id             String   @id @default(cuid()) @map("_id")
   email          String   @unique
   hashedPassword String
+  centerId       String
+  center         Center   @relation(fields: [centerId], references: [id])
   createdAt      DateTime @default(now())
   updatedAt      DateTime @updatedAt
 }
@@ -35,6 +41,8 @@ model Admin {
   id             String   @id @default(cuid()) @map("_id")
   email          String   @unique
   hashedPassword String
+  centerId       String
+  center         Center   @relation(fields: [centerId], references: [id])
   createdAt      DateTime @default(now())
   updatedAt      DateTime @updatedAt
 }
@@ -43,6 +51,21 @@ model Secretary {
   id             String   @id @default(cuid()) @map("_id")
   email          String   @unique
   hashedPassword String
+  centerId       String
+  center         Center   @relation(fields: [centerId], references: [id])
   createdAt      DateTime @default(now())
   updatedAt      DateTime @updatedAt
+}
+
+model Center {
+  id        String             @id @default(cuid()) @map("_id")
+  name      String
+  contact   String
+  createdAt DateTime           @default(now())
+  updatedAt DateTime           @updatedAt
+  members   Center_Member[]
+  leader    Spiritual_leader[]
+  secretary Secretary[]
+  converts  Convert[]
+  admins    Admin[]
 }
