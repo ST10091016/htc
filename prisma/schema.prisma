@@ -49,6 +49,8 @@ model Admin {
 
 model Secretary {
   id             String   @id @default(cuid()) @map("_id")
+  firstName      String
+  lastName       String
   email          String   @unique
   hashedPassword String
   centerId       String
