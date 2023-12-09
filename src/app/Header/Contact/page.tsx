@@ -2,6 +2,7 @@
 import Link from "next/link";
 import React, { useState } from "react";
 export default function Home() {
+  
   const [formData, setFormData] = useState({
     name: "",
     email: "",
