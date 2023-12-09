@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import { signIn, signOut } from "next-auth/react";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
@@ -16,36 +15,26 @@ export default function Page() {
   const [data, setData] = useState({
     email: "",
     password: "",
-    role: "student",
+    role: "",
   });
-
-  // if (session) {
-  //   if (session.user?.role === "student") {
-  //     router.push("/student/dashboard");
-  //   } else {
-  //     setTimeout(() => {
-  //       signOut();
-  //     }, 1000);
-  //   }
-  // }
 
   const loginUser = async (e: any) => {
     e.preventDefault();
     setIsLoading(true);
-    // signIn("credentials", { ...data, redirect: false }).then((callback) => {
-    //   if (callback?.error) {
-    //     setIsLoading(false);
-    //     toast.error(callback.error);
-    //   }
+    signIn("credentials", { ...data, redirect: false }).then((callback) => {
+      if (callback?.error) {
+        setIsLoading(false);
+        toast.error(callback.error);
+      }
 
-    //   if (callback?.ok && !callback?.error) {
-    //     setIsLoading(false);
-    //     toast.success("Logged in successfully!");
-    //     setTimeout(() => {
-    //       router.push("/student/dashboard");
-    //     }, 1200); // Wait for 1.2 seconds (1200 milliseconds) before pushing
-    //   }
-    // });
+      if (callback?.ok && !callback?.error) {
+        setIsLoading(false);
+        toast.success("Logged in successfully!");
+        setTimeout(() => {
+          router.push("/");
+        }, 1200); // Wait for 1.2 seconds (1200 milliseconds) before pushing
+      }
+    });
   };
 
   if (!session && status !== "loading") {
@@ -59,14 +48,34 @@ export default function Page() {
               </h5>
               <div>
                 <label className="block mb-2 text-sm font-medium text-white">
-                  Role
+                  Account Type
                 </label>
                 <select
-                  className="bg-gray-50 bg-opacity-20 text-white text-sm rounded-lg block w-full p-2"
                   name="role"
-                  required>
-                  <option>CM</option>
-                  <option>Admin</option>
+                  value={data.role}
+                  onChange={(e) => {
+                    setData({ ...data, role: e.target.value });
+                  }}
+                  id="role"
+                  className="bg-gray-50 bg-opacity-20 text-white text-sm rounded-lg block w-full p-2"
+                  required
+                >
+                  <option className="bg-gray-500 text-white" value=""></option>
+                  <option
+                    className="bg-gray-500 text-white"
+                    value="centerMember"
+                  >
+                    Center Member
+                  </option>
+                  <option className="bg-gray-500 text-white" value="convert">
+                    Convert
+                  </option>
+                  <option className="bg-gray-500 text-white" value="secretary">
+                    Secretary
+                  </option>
+                  <option className="bg-gray-500 text-white" value="admin">
+                    Admin
+                  </option>
                 </select>
               </div>
               <div>
