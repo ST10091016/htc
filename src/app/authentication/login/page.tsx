@@ -37,6 +37,7 @@ export default function Page() {
     });
   };
 
+
   if (!session && status !== "loading") {
     return (
       <section className="bg-center bg-cover bg-no-repeat bg-[url('https://images.pexels.com/photos/1137332/pexels-photo-1137332.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] bg-stone-400 bg-blend-multiply">
