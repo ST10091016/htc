@@ -2,6 +2,7 @@
 import Link from "next/link";
 import React, { useState } from "react";
 export default function Home() {
+  
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -9,8 +10,8 @@ export default function Home() {
     message: "",
   });
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleSubmit = async() => {
+   
     try {
       //api for the email, so that it sends to the person receiving the email
       const response = await fetch("/api/send-message", {
@@ -42,7 +43,7 @@ export default function Home() {
             <div className="bg-[url('https://images.pexels.com/photos/946186/pexels-photo-946186.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] h-2/3 bg-cover bg-center bg-gray-400 bg-blend-multiply text-white py-24 px-10">
                 <div>
                     <p className="text-6xl text-white text-center font-extrabold">Contact Us</p>
-                    <p className="text-xl  text-white font-semibold mb-10 my-4 text-center leading-none"> Need more details about the church or anything? Let us know</p>
+                    <p className="text-xl  text-white font-semibold mb-10 my-4 text-center leading-none"> Need more details about the church or want to join? Let us know!</p>
                 </div>
             </div>
         </div>
@@ -145,7 +146,7 @@ export default function Home() {
                 <form onSubmit={handleSubmit}>
                   <div className="relative mb-6">
                     <label
-                      for="name"
+                     
                       className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
                     >
                       Name
@@ -163,7 +164,7 @@ export default function Home() {
                   </div>
                   <div className="relative mb-6">
                     <label
-                      for="email"
+
                       className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
                     >
                       Email
@@ -182,7 +183,7 @@ export default function Home() {
 
                   <div className="relative mb-6">
                     <label
-                      for="subject"
+                    
                       className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
                     >
                       Subject
@@ -200,18 +201,18 @@ export default function Home() {
                   </div>
                   <div className="relative mb-6">
                     <label
-                      for="message"
+                      
                       className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
                     >
                       Your message
                     </label>
                     <textarea
                       id="message"
-                      type="message"
+                      
                       onChange={(e) => {
                         setFormData({ ...formData, message: e.target.value });
                       }}
-                      rows="6"
+                      
                       required
                       className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                       placeholder="Type your message here"
