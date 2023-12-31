@@ -3,12 +3,11 @@
 import toast from "react-hot-toast";
 import React, { useState, useRef } from "react";
 import AddMemberButton from "./AddMemberButton";
-import { addCenterMember } from "@/app/(secretary)/secretary/center-members/_actions/addCenterMember";
-import Datepicker from "react-tailwindcss-datepicker";
+import { addCenterMember } from "@/app/(secretary)/secretary/convert/_actions/addCenterMember";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
-export default function AddMemberForm({centers} : {centers: any}) {
+export default function AddConvertForm({ centers }: { centers: any }) {
   const [date, setDate] = useState({
     startDate: null,
     endDate: null,
@@ -47,35 +46,15 @@ export default function AddMemberForm({centers} : {centers: any}) {
                 toast.error(result?.error as string);
               } else {
                 toast.success("Added Successfully");
-                router.push("/secretary/center-members");
+                router.push("/secretary/convert");
               }
             }}
           >
             <h1 className="text-center m-5 text-2xl font-extrabold tracking-tight leading-none text-gray-900 dark:text-gray-100">
-              Add Center Member
+              Add Convert
             </h1>
             <div className="grid gap-4 mb-4 grid-cols-2">
-              <div className="col-span-2">
-                <label
-                  htmlFor="title"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                >
-                  Title
-                </label>
-                <select
-                  name="title"
-                  id="title"
-                  className="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                  required
-                >
-                  <option value="Mr">Mr</option>
-                  <option value="Mrs">Mrs</option>
-                  <option value="Miss">Miss</option>
-                  <option value="Ms">Ms</option>
-                  <option value="Dr">Dr</option>
-                  <option value="Prof">Prof</option>
-                </select>
-              </div>
+
 
               <div className="col-span-1">
                 <label
@@ -107,36 +86,8 @@ export default function AddMemberForm({centers} : {centers: any}) {
                   required
                 />
               </div>
-              <div className="col-span-1">
-                <label
-                  htmlFor="address"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                >
-                  Address
-                </label>
-                <input
-                  type="text"
-                  name="address"
-                  id="address"
-                  className="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                  required
-                />
-              </div>
-              <div className="col-span-1">
-                <label
-                  htmlFor="postalCode"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                >
-                  Postal Code
-                </label>
-                <input
-                  type="text"
-                  name="postalCode"
-                  id="postalCode"
-                  className="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                  required
-                />
-              </div>
+
+
               <div className="col-span-1">
                 <label
                   htmlFor="phone"
@@ -187,38 +138,53 @@ export default function AddMemberForm({centers} : {centers: any}) {
                   <option value="Female">Female</option>
                 </select>
               </div>
+
               <div className="col-span-1">
                 <label
-                  htmlFor="birthday"
+                  htmlFor="status"
                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
-                  Date of Birth
+                  Status
                 </label>
-                <Datepicker
-                  useRange={false}
-                  asSingle={true}
-                  displayFormat={"DD/MM/YYYY"}
-                  value={date}
-                  onChange={handleValueChange}
+                <input
+                  type="text"
+                  name="status"
+                  id="status"
+                  className="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                  placeholder="johnbaptist@gmail.com"
                 />
               </div>
 
               <div className="col-span-1">
                 <label
-                  htmlFor="baptism"
+                  htmlFor="followUp"
                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
-                  Have you been water baptized?
+                  Follow Up
                 </label>
-
-                <select
-                  name="baptism"
-                  id="baptism"
+                <input
+                  type="text"
+                  name="followUp"
+                  id="followUp"
                   className="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                  placeholder="johnbaptist@gmail.com"
+                />
+              </div>
+
+              <div className="col-span-1">
+                <label
+                  htmlFor="actions"
+                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
-                  <option value="true">Yes</option>
-                  <option value="false">No</option>
-                </select>
+                  Actions
+                </label>
+                <input
+                  type="text"
+                  name="actions"
+                  id="actions"
+                  className="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                  placeholder="johnbaptist@gmail.com"
+                />
               </div>
 
               <div className="col-span-1">

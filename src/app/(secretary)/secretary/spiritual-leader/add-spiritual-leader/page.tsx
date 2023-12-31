@@ -1,5 +1,5 @@
 import React from "react";
-import AddConvertForm from "../components/Add/AddConvertForm"
+import AddSpiritualLeaderForm from "../components/Add/AddSpiritualLeaderForm"
 import prisma from "@/lib/prisma/prismadb";
 
 export default async function Page() {
@@ -8,7 +8,7 @@ export default async function Page() {
   });
   return (
     <>
-      <AddConvertForm centers={centers} />
+      <AddSpiritualLeaderForm centers={centers} />
     </>
   );
 }
