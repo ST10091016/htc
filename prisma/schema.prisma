@@ -9,7 +9,16 @@ datasource db {
 
 model Center_Member {
   id             String   @id @default(cuid()) @map("_id")
+  title          String
+  firstName      String
+  lastName       String
+  address        String
+  postalCode     String
+  phone          String
   email          String   @unique
+  gender         String
+  birthDate      String
+  baptism        Boolean
   hashedPassword String
   centerId       String
   center         Center   @relation(fields: [centerId], references: [id])
