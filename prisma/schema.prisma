@@ -81,14 +81,18 @@ model Secretary {
 }
 
 model Center {
-  id        String             @id @default(cuid()) @map("_id")
-  name      String
-  contact   String
-  createdAt DateTime           @default(now())
-  updatedAt DateTime           @updatedAt
-  members   Center_Member[]
-  leader    Spiritual_leader[]
-  secretary Secretary[]
-  converts  Convert[]
-  admins    Admin[]
+  id           String             @id @default(cuid()) @map("_id")
+  member       String
+  location     String
+  elderName    String?
+  centerLeader String
+  centerSize   String?
+  phone        String
+  createdAt    DateTime           @default(now())
+  updatedAt    DateTime           @updatedAt
+  members      Center_Member[]
+  leader       Spiritual_leader[]
+  secretary    Secretary[]
+  converts     Convert[]
+  admins       Admin[]
 }
