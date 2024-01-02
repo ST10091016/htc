@@ -28,7 +28,12 @@ model Center_Member {
 
 model Spiritual_leader {
   id             String   @id @default(cuid()) @map("_id")
+  firstName      String
+  lastName       String
+  phone          String
   email          String   @unique
+  role           String?
+  gender         String
   hashedPassword String
   centerId       String
   center         Center   @relation(fields: [centerId], references: [id])
@@ -38,7 +43,14 @@ model Spiritual_leader {
 
 model Convert {
   id             String   @id @default(cuid()) @map("_id")
+  firstName      String
+  lastName       String
+  phone          String
   email          String   @unique
+  gender         String
+  status         String?
+  followUp       String?
+  actions        String?
   hashedPassword String
   centerId       String
   center         Center   @relation(fields: [centerId], references: [id])

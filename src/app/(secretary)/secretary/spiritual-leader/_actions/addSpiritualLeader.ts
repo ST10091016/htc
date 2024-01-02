@@ -4,9 +4,9 @@ import prisma from "@/lib/prisma/prismadb";
 import bcrypt from "bcrypt";
 import { revalidatePath } from "next/cache";
 
-export const addCenterMember = async (formData: FormData, date: any) => {
+export const addSpiritualLeader = async (formData: FormData) => {
   try {
-    await prisma.convert
+    await prisma.spiritual_leader
       .create({
         data: {
           firstName: formData.get("firstName") as string,
