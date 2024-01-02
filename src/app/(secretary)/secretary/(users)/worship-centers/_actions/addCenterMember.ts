@@ -6,25 +6,16 @@ import { revalidatePath } from "next/cache";
 
 export const addCenterMember = async (formData: FormData, date: any) => {
   try {
-    await prisma.center_Member
+    await prisma.center
       .create({
         data: {
-          title: formData.get("title") as string,
-          firstName: formData.get("firstName") as string,
-          lastName: formData.get("lastName") as string,
-          address: formData.get("address") as string,
-          postalCode: formData.get("postalCode") as string,
-          phone: formData.get("phone") as string,
-          email: formData.get("email") as string,
-          gender: formData.get("gender") as string,
-          birthDate: date as string,
-          baptism:
-            (formData.get("baptism") as string) === "true" ? true : false,
-          centerId: formData.get("centerId") as string,
-          hashedPassword: await bcrypt.hash(
-            formData.get("password") as string,
-            10
-          ),
+          member: formData.get("member") as string,
+          location: formData.get("location") as string,
+          elderName: formData.get("elderName") as string,
+          centerLeader: formData.get("centerLeader") as string,
+          centerSize: formData.get("centerSize") as string,
+          phone: formData.get("phone") as string
+        
         },
       })
       .finally(() => prisma.$disconnect());

@@ -4,7 +4,6 @@ import toast from "react-hot-toast";
 import React, { useState, useRef } from "react";
 import AddMemberButton from "../../../_components/AddButton";
 import { addCenterMember } from "@/app/(secretary)/secretary/center-members/_actions/addCenterMember";
-import Datepicker from "react-tailwindcss-datepicker";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
@@ -52,91 +51,88 @@ export default function AddMemberForm({centers} : {centers: any}) {
             }}
           >
             <h1 className="text-center m-5 text-2xl font-extrabold tracking-tight leading-none text-gray-900 dark:text-gray-100">
-              Add Center Member
+              Add Center
             </h1>
             <div className="grid gap-4 mb-4 grid-cols-2">
-              <div className="col-span-2">
+             
+
+              <div className="col-span-1">
                 <label
-                  htmlFor="title"
+                  htmlFor="member"
                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
-                  Title
+                  Member
                 </label>
-                <select
-                  name="title"
-                  id="title"
+                <input
+                  type="text"
+                  name="member"
+                  id="member"
                   className="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                   required
+                />
+              </div>
+              <div className="col-span-1">
+                <label
+                  htmlFor="location"
+                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
-                  <option value="Mr">Mr</option>
-                  <option value="Mrs">Mrs</option>
-                  <option value="Miss">Miss</option>
-                  <option value="Ms">Ms</option>
-                  <option value="Dr">Dr</option>
-                  <option value="Prof">Prof</option>
-                </select>
+                  Location
+                </label>
+                <input
+                  type="text"
+                  name="location"
+                  id="location"
+                  className="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                  required
+                />
+              </div>
+              <div className="col-span-1">
+                <label
+                  htmlFor="elderName"
+                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >
+                  Elder Name
+                </label>
+                <input
+                  type="text"
+                  name="elderName"
+                  id="elderName"
+                  className="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                  required
+                />
+              </div>
+              <div className="col-span-1">
+                <label
+                  htmlFor="centerLeader"
+                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >
+                  Center Leader
+                </label>
+                <input
+                  type="text"
+                  name="centerLeader"
+                  id="centerLeader"
+                  className="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                  required
+                />
               </div>
 
               <div className="col-span-1">
                 <label
-                  htmlFor="firstName"
+                  htmlFor="centerSize"
                   className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                 >
-                  First Name
+                  Center Size
                 </label>
                 <input
                   type="text"
-                  name="firstName"
-                  id="firstName"
+                  name="centerSize"
+                  id="centerSize"
                   className="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                  required
+                  placeholder="johnbaptist@gmail.com"
                 />
               </div>
-              <div className="col-span-1">
-                <label
-                  htmlFor="lastName"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                >
-                  Last Name
-                </label>
-                <input
-                  type="text"
-                  name="lastName"
-                  id="lastName"
-                  className="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                  required
-                />
-              </div>
-              <div className="col-span-1">
-                <label
-                  htmlFor="address"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                >
-                  Address
-                </label>
-                <input
-                  type="text"
-                  name="address"
-                  id="address"
-                  className="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                  required
-                />
-              </div>
-              <div className="col-span-1">
-                <label
-                  htmlFor="postalCode"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                >
-                  Postal Code
-                </label>
-                <input
-                  type="text"
-                  name="postalCode"
-                  id="postalCode"
-                  className="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                  required
-                />
-              </div>
+
               <div className="col-span-1">
                 <label
                   htmlFor="phone"
@@ -152,105 +148,7 @@ export default function AddMemberForm({centers} : {centers: any}) {
                   placeholder="+27 12 345 6789"
                   required={false}
                 />
-              </div>
-              <div className="col-span-1">
-                <label
-                  htmlFor="email"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                >
-                  Email
-                </label>
-                <input
-                  type="text"
-                  name="email"
-                  id="email"
-                  className="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                  placeholder="johnbaptist@gmail.com"
-                />
-              </div>
-
-              <div className="col-span-1">
-                <label
-                  htmlFor="gender"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                >
-                  Gender
-                </label>
-
-                <select
-                  name="gender"
-                  id="gender"
-                  className="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                  placeholder="male"
-                >
-                  <option value="Male">Male</option>
-                  <option value="Female">Female</option>
-                </select>
-              </div>
-              <div className="col-span-1">
-                <label
-                  htmlFor="birthday"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                >
-                  Date of Birth
-                </label>
-                <Datepicker
-                  useRange={false}
-                  asSingle={true}
-                  displayFormat={"DD/MM/YYYY"}
-                  value={date}
-                  onChange={handleValueChange}
-                />
-              </div>
-
-              <div className="col-span-1">
-                <label
-                  htmlFor="baptism"
-                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                >
-                  Have you been water baptized?
-                </label>
-
-                <select
-                  name="baptism"
-                  id="baptism"
-                  className="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                >
-                  <option value="true">Yes</option>
-                  <option value="false">No</option>
-                </select>
-              </div>
-
-              <div className="col-span-1">
-                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                  Center
-                </label>
-                <select
-                  name="centerId"
-                  id="centerId"
-                  className="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                  required
-                >
-                  {centers.map((center: any) => (
-                    <option key={center.id} value={center.id}>
-                      {center.name}
-                    </option>
-                  ))}
-                </select>
-              </div>
-              <div>
-                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                  Password
-                </label>
-                <input
-                  type="password"
-                  name="password"
-                  id="password"
-                  placeholder="••••••••"
-                  className="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                  required
-                />
-              </div>
+              </div>   
             </div>
             <div className="flex justify-between">
               <AddMemberButton />
