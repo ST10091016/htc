@@ -3,7 +3,7 @@
 import toast from "react-hot-toast";
 import React, { useState, useRef } from "react";
 import AddButton from "../../../_components/AddButton";
-import { addCenterMember } from "@/app/(secretary)/secretary/center-members/_actions/addCenterMember";
+import { addCenterMember } from "@/app/(secretary)/secretary/(users)/_actions/centerMember";
 import Datepicker from "react-tailwindcss-datepicker";
 import { useRouter } from "next/navigation";
 import Link from "next/link";

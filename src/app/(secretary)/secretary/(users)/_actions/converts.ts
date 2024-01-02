@@ -37,7 +37,11 @@ export const addConvert = async (formData: FormData, date: any) => {
 };
 
 //Update
-export async function UpdateConvert(formData: FormData, memberId: string, date: any) {
+export async function UpdateConvert(
+  formData: FormData,
+  memberId: string,
+  // date: any
+) {
   try {
     await prisma.convert
       .update({

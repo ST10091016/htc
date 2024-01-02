@@ -5,9 +5,6 @@ import prisma from "@/lib/prisma/prismadb";
 import Link from "next/link";
 
 export default async function Page() {
-  const centers = await prisma.center.findMany().finally(() => {
-    prisma.$disconnect();
-  });
   return (
     <>
       <div className="flex py-5 justify-end">

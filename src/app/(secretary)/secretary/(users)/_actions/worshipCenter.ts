@@ -5,27 +5,18 @@ import bcrypt from "bcrypt";
 import { revalidatePath } from "next/cache";
 
 //Add
-export const addWorshipCenter = async (formData: FormData, date: any) => {
+export const addWorshipCenter = async (formData: FormData) => {
   try {
     await prisma.center
       .create({
         data: {
-          title: formData.get("title") as string,
-          firstName: formData.get("firstName") as string,
-          lastName: formData.get("lastName") as string,
-          address: formData.get("address") as string,
-          postalCode: formData.get("postalCode") as string,
-          phone: formData.get("phone") as string,
-          email: formData.get("email") as string,
-          gender: formData.get("gender") as string,
-          birthDate: date as string,
-          baptism:
-            (formData.get("baptism") as string) === "true" ? true : false,
-          centerId: formData.get("centerId") as string,
-          hashedPassword: await bcrypt.hash(
-            formData.get("password") as string,
-            10
-          ),
+          name: formData.get("name") as string,
+          member: formData.get("member") as string,
+          location: formData.get("location") as string,
+          elderName: formData.get("elderName") as string,
+          centerLeader: formData.get("centerLeader") as string,
+          centerSize: formData.get("centerSize") as string,
+          contact: formData.get("phone") as string,
         },
       })
       .finally(() => prisma.$disconnect());
@@ -46,29 +37,20 @@ export const addWorshipCenter = async (formData: FormData, date: any) => {
 export async function UpdateWorshipCenter(
   formData: FormData,
   memberId: string,
-  date: any
+
 ) {
   try {
     await prisma.center
       .update({
         where: { id: memberId },
         data: {
-          title: formData.get("title") as string,
-          firstName: formData.get("firstName") as string,
-          lastName: formData.get("lastName") as string,
-          address: formData.get("address") as string,
-          postalCode: formData.get("postalCode") as string,
-          phone: formData.get("mobile") as string,
-          email: formData.get("email") as string,
-          gender: formData.get("gender") as string,
-          birthDate: date as string,
-          baptism:
-            (formData.get("baptism") as string) === "true" ? true : false,
-          centerId: formData.get("centerId") as string,
-          hashedPassword: await bcrypt.hash(
-            formData.get("password") as string,
-            10
-          ),
+          name: formData.get("name") as string,
+          member: formData.get("member") as string,
+          location: formData.get("location") as string,
+          elderName: formData.get("elderName") as string,
+          centerLeader: formData.get("centerLeader") as string,
+          centerSize: formData.get("centerSize") as string,
+          contact: formData.get("mobile") as string,
         },
       })
       .finally(() => {

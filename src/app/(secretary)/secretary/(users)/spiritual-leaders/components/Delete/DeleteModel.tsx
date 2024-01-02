@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import toast from "react-hot-toast";
-import { DeleteMember } from "../../_actions/deleteCenterMember";
+import { DeleteSpiritualLeader } from "../../../_actions/spiritualLeader";
 import DeleteButton from "../../../_components/DeleteButton";
 
 export default function DeleteModel({ memberId }: { memberId: string }) {
@@ -56,7 +56,7 @@ export default function DeleteModel({ memberId }: { memberId: string }) {
               <div className="flex justify-center">
                 <form
                   action={async () => {
-                    const result = await DeleteMember(memberId).then(
+                    const result = await DeleteSpiritualLeader(memberId).then(
                       (result) => {
                         if (result === null) {
                           throw new Error("Member is null");

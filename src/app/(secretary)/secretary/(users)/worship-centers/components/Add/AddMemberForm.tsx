@@ -3,7 +3,7 @@
 import toast from "react-hot-toast";
 import React, { useState, useRef } from "react";
 import AddMemberButton from "../../../_components/AddButton";
-import { addCenterMember } from "@/app/(secretary)/secretary/center-members/_actions/addCenterMember";
+import { addWorshipCenter } from "@/app/(secretary)/secretary/(users)/_actions/worshipCenter";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
@@ -28,9 +28,8 @@ export default function AddMemberForm({centers} : {centers: any}) {
             ref={ref}
             className="p-4 my-5 md:p-5 w-10/12 md:w-10/12 shadow-xl bg-white dark:bg-gray-800 rounded-lg"
             action={async (formDta: FormData) => {
-              const result = await addCenterMember(
+              const result = await addWorshipCenter(
                 formDta,
-                date.startDate
               ).then((result) => {
                 if (result === null) {
                   throw new Error("Center Member is null");
@@ -46,7 +45,7 @@ export default function AddMemberForm({centers} : {centers: any}) {
                 toast.error(result?.error as string);
               } else {
                 toast.success("Added Successfully");
-                router.push("/secretary/center-members");
+                router.push("/secretary/worship-centers");
               }
             }}
           >
@@ -54,6 +53,21 @@ export default function AddMemberForm({centers} : {centers: any}) {
               Add Center
             </h1>
             <div className="grid gap-4 mb-4 grid-cols-2">
+              <div className="col-span-2">
+                <label
+                  htmlFor="name"
+                  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                >
+                  Center name
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  className="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                  required
+                />
+              </div>
              
 
               <div className="col-span-1">

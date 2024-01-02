@@ -3,7 +3,7 @@
 import toast from "react-hot-toast";
 import React, { useState, useRef } from "react";
 import AddButton from "../../../_components/AddButton";
-import { addSpiritualLeader } from "@/app/(secretary)/secretary/spiritual-leader/_actions/addSpiritualLeader";
+import { addSpiritualLeader } from "@/app/(secretary)/secretary/(users)/_actions/spiritualLeader";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
@@ -32,7 +32,7 @@ export default function AddSpiritualLeaderForm({centers} : {centers: any}) {
                 toast.error(result?.error as string);
               } else {
                 toast.success("Added Successfully");
-                router.push("/secretary/spiritual-leader");
+                router.push("/secretary/spiritual-leaders");
               }
             }}
           >

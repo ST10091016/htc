@@ -1,4 +1,3 @@
-import Image from "next/image";
 import DeleteModel from "./components/Delete/DeleteModel";
 import UpdateModel from "./components/Update/UpdateModel";
 import ViewModel from "./components/View/ViewModel";
@@ -8,17 +7,15 @@ import { revalidatePath } from "next/cache";
 export const revalidate = 500;
 export default async function CenterMemberCard() {
 
-  const members:any = await prisma.center_Member.findMany().finally(() => revalidatePath("/secretary"))
-
-  console.log(members);
+  const centers: any = await prisma.center.findMany().finally(() => revalidatePath("/secretary"))
 
   return (
     <>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 xl:grid-cols- 2xl:gap-8 w-12/12 m-auto">
-        {members.map((member:any) => {
+        {centers.map((center: any) => {
           return (
             <div
-              key={member.id}
+              key={center.id}
               className="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
             >
               <div className="px-4 p-4">
@@ -28,16 +25,16 @@ export default async function CenterMemberCard() {
                   </div>
                   <div className="flex-1 min-w-0 ms-4">
                     <p className="flex gap-1 items-center text-sm font-medium text-gray-900 truncate dark:text-white">
-                      {member.firstName} {member.lastName}
+                      {center.name}
                     </p>
                     <p className="text-sm text-center lg:text-start text-gray-500 truncate dark:text-gray-400">
-                      {member.email} - {member.phone}
+                      {center.contact}
                     </p>
                   </div>
                   <div className="inline-flex items-center gap-2 text-sm font-medium text-gray-900 dark:text-gray-300">
-                    <ViewModel member={member} />
-                    <UpdateModel member={member} />
-                    <DeleteModel memberId={member.id} />
+                    <ViewModel member={center} />
+                    <UpdateModel member={center} />
+                    <DeleteModel memberId={center.id} />
                   </div>
                 </div>
               </div>

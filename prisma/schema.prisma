@@ -82,12 +82,13 @@ model Secretary {
 
 model Center {
   id           String             @id @default(cuid()) @map("_id")
-  member       String
-  location     String
+  name         String
+  member       String?
+  location     String?
   elderName    String?
-  centerLeader String
+  centerLeader String?
   centerSize   String?
-  phone        String
+  contact      String
   createdAt    DateTime           @default(now())
   updatedAt    DateTime           @updatedAt
   members      Center_Member[]

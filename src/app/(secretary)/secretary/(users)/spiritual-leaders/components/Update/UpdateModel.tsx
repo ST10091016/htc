@@ -2,7 +2,7 @@
 
 import React, { useState, useRef } from "react";
 import toast from "react-hot-toast";
-import { UpdateMember } from "../../_actions/updateCenterMember";
+import { UpdateSpiritualLeader } from "../../../_actions/spiritualLeader";
 import UpdateButton from "../../../_components/UpdateButton";
 
 export default function UpdateModel({ member }: { member: any }) {
@@ -77,7 +77,7 @@ export default function UpdateModel({ member }: { member: any }) {
             <div className="p-6">
               <form
                 action={async (formData: any) => {
-                  const result = await UpdateMember(formData, member.id).then(
+                  const result = await UpdateSpiritualLeader(formData, member.id).then(
                     (result) => {
                       if (result === null) {
                         throw new Error("Project is null");

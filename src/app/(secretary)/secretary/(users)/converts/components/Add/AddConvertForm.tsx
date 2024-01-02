@@ -3,7 +3,7 @@
 import toast from "react-hot-toast";
 import React, { useState, useRef } from "react";
 import AddButton from "../../../_components/AddButton";
-import { addCenterMember } from "@/app/(secretary)/secretary/convert/_actions/addCenterMember";
+import { addConvert } from "@/app/(secretary)/secretary/(users)/_actions/converts";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 
@@ -28,7 +28,7 @@ export default function AddConvertForm({ centers }: { centers: any }) {
             ref={ref}
             className="p-4 my-5 md:p-5 w-10/12 md:w-10/12 shadow-xl bg-white dark:bg-gray-800 rounded-lg"
             action={async (formDta: FormData) => {
-              const result = await addCenterMember(
+              const result = await addConvert(
                 formDta,
                 date.startDate
               ).then((result) => {
@@ -46,7 +46,7 @@ export default function AddConvertForm({ centers }: { centers: any }) {
                 toast.error(result?.error as string);
               } else {
                 toast.success("Added Successfully");
-                router.push("/secretary/convert");
+                router.push("/secretary/converts");
               }
             }}
           >

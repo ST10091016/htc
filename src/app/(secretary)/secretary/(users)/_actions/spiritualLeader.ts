@@ -40,7 +40,7 @@ export const addSpiritualLeader = async (formData: FormData) => {
 export async function UpdateSpiritualLeader(
   formData: FormData,
   memberId: string,
-  date: any
+  // date: any
 ) {
   try {
     await prisma.center_Member
@@ -55,7 +55,7 @@ export async function UpdateSpiritualLeader(
           phone: formData.get("mobile") as string,
           email: formData.get("email") as string,
           gender: formData.get("gender") as string,
-          birthDate: date as string,
+          // birthDate: date as string,
           baptism:
             (formData.get("baptism") as string) === "true" ? true : false,
           centerId: formData.get("centerId") as string,
