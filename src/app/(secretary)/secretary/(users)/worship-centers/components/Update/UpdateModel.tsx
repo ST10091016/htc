@@ -5,14 +5,15 @@ import toast from "react-hot-toast";
 import { UpdateWorshipCenter } from "../../../_actions/worshipCenter";
 import UpdateButton from "../../../_components/UpdateButton";
 
-export default function UpdateModel({ member }: { member: any }) {
+export default function UpdateModel({ center }: { center: any }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [firstName, setFirstName] = useState(member.firstName);
-  const [lastName, setLastName] = useState(member.lastName);
-  const [email, setEmail] = useState(member.email);
-  const [mobile, setMobile] = useState(member.mobile);
-  const [class_, setClass] = useState(member.class);
-  const [tag, setTag] = useState(member.tag);
+  const [name, setName] = useState(center.name);
+  const [member, setMember] = useState(center.member);
+  const [location, setLocation] = useState(center.location);
+  const [elderName, setElderName] = useState(center.elderName);
+  const [centerLeader, setCenterLeader] = useState(center.centerLeader);
+  const [centerSize, setCenterSize] = useState(center.centerSize);
+  const [contact, setContact] = useState(center.contact);
 
   const openModal = () => {
     setIsModalOpen(true);

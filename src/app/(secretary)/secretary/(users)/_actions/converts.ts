@@ -70,11 +70,11 @@ export async function UpdateConvert(
 }
 
 //Delete
-export async function DeleteConvert(memberId: string) {
+export async function DeleteConvert(Id: string) {
   try {
-    await prisma.center_Member
+    await prisma.convert
       .delete({
-        where: { id: memberId },
+        where: { id: Id },
       })
       .finally(() => {
         prisma.$disconnect(), revalidatePath(`/`);

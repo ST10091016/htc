@@ -24,7 +24,7 @@ export default function DeleteModel({ memberId }: { memberId: string }) {
           <div className="relative bg-white rounded-lg shadow dark:bg-gray-800">
             <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-800">
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                Delete Member
+                Delete Center
               </h3>
               <button
                 onClick={() => setModalOpen(false)}
@@ -51,7 +51,7 @@ export default function DeleteModel({ memberId }: { memberId: string }) {
             </div>
             <div className="bg-white rounded-lg p-6 w-180 dark:bg-gray-800">
               <h3 className="text-lg font-semibold mb-4">
-                Are you sure you want to Delete this member?
+                Are you sure you want to delete this center?
               </h3>
               <div className="flex justify-center">
                 <form
@@ -68,7 +68,7 @@ export default function DeleteModel({ memberId }: { memberId: string }) {
                     if (result?.error) {
                       toast.error(result?.error as string);
                     } else {
-                      toast.success("Member Deleted");
+                      toast.success("Center Deleted");
                     }
                   }}
                 >

@@ -78,7 +78,7 @@ export async function UpdateSpiritualLeader(
 //Delete
 export async function DeleteSpiritualLeader(Id: string) {
   try {
-    await prisma.center_Member
+    await prisma.spiritual_leader
       .delete({
         where: { id: Id },
       })

@@ -5,15 +5,19 @@ import toast from "react-hot-toast";
 import { UpdateConvert } from "../../../_actions/converts";
 import UpdateButton from "../../../_components/UpdateButton";
 
-export default function UpdateModel({ member }: { member: any }) {
+export default function UpdateModel({ convert }: { convert: any }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [firstName, setFirstName] = useState(member.firstName);
-  const [lastName, setLastName] = useState(member.lastName);
-  const [email, setEmail] = useState(member.email);
-  const [mobile, setMobile] = useState(member.mobile);
-  const [class_, setClass] = useState(member.class);
-  const [tag, setTag] = useState(member.tag);
-
+  const [firstName, setFirstName] = useState(convert.firstName);
+  const [lastName, setLastName] = useState(convert.lastName);
+  const [phone, setPhone] = useState(convert.phone);
+  const [email, setEmail] = useState(convert.email);
+  const [gender, setGender] = useState(convert.gender);
+  const [status, setStatus] = useState(convert.status);
+  const [followUp, setFollowUp] = useState(convert.followUp);
+  const [actions, setActions] = useState(convert.actions);
+  const [hashedPassword, setHashedPassword] = useState(convert.hashedPassword);
+  const [centerId, setCenterId] = useState(convert.centerId);
+  
   const openModal = () => {
     setIsModalOpen(true);
   };
@@ -149,65 +153,25 @@ export default function UpdateModel({ member }: { member: any }) {
                       placeholder="Member email"
                     />
                   </div>
+                  
                   <div className="col-span-2">
                     <label
-                      htmlFor="mobile"
+                      htmlFor="phone"
                       className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                     >
-                      Mobile
+                      Phone
                     </label>
                     <input
-                      type="text"
-                      name="mobile"
-                      id="mobile"
+                      type="phone"
+                      name="phone"
+                      id="phone"
                       className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                      value={mobile}
-                      onChange={(e) => setMobile(e.target.value)}
-                      placeholder="Member mobile"
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value)}
+                      placeholder="Member email"
                     />
                   </div>
-                  <div className="col-span-2">
-                    <label
-                      htmlFor="class"
-                      className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                    >
-                      Class
-                    </label>
-                    <select
-                      name="class"
-                      id="class"
-                      value={class_}
-                      onChange={(e) => setClass(e.target.value)}
-                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                    >
-                      <option value="Children">Children</option>
-                      <option value="Teens">Teens</option>
-                      <option value="Baptismal">Baptismal</option>
-                      <option value="Youth">Youth</option>
-                      <option value="Adult">Adult</option>
-                      <option value="Agape">Agape</option>
-                    </select>
-                  </div>
-                  <div className="col-span-2">
-                    <label
-                      htmlFor="mobile"
-                      className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                    >
-                      Tag
-                    </label>
-                    <select
-                      name="tag"
-                      id="tag"
-                      value={tag}
-                      onChange={(e) => setTag(e.target.value)}
-                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                    >
-                      <option value="admin">Admin</option>
-                      <option value="elder">Elder</option>
-                      <option value="pastor">Pastor</option>
-                      <option value="member">Member</option>
-                    </select>
-                  </div>
+                  
                 </div>
                 <div className="flex justify-between">
                   <UpdateButton />

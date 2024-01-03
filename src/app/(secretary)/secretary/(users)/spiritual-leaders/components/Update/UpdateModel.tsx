@@ -5,15 +5,16 @@ import toast from "react-hot-toast";
 import { UpdateSpiritualLeader } from "../../../_actions/spiritualLeader";
 import UpdateButton from "../../../_components/UpdateButton";
 
-export default function UpdateModel({ member }: { member: any }) {
+export default function UpdateModel({ leader }: { leader: any }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [firstName, setFirstName] = useState(member.firstName);
-  const [lastName, setLastName] = useState(member.lastName);
-  const [email, setEmail] = useState(member.email);
-  const [mobile, setMobile] = useState(member.mobile);
-  const [class_, setClass] = useState(member.class);
-  const [tag, setTag] = useState(member.tag);
-
+  const [firstName, setFirstName] = useState(leader.firstName);
+  const [lastName, setLastName] = useState(leader.lastName);
+  const [phone, setPhone] = useState(leader.phone);
+  const [email, setEmail] = useState(leader.email);
+  const [role, setRole] = useState(leader.role);
+  const [gender, setGender] = useState(leader.gender);
+  const [hashedPassword, setHashedPassword] = useState(leader.hashedPassword);
+  const [centerId, setCenterId] = useState(leader.centerId);
   const openModal = () => {
     setIsModalOpen(true);
   };

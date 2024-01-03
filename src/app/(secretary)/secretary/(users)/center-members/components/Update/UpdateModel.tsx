@@ -7,12 +7,18 @@ import UpdateButton from "../../../_components/UpdateButton";
 
 export default function UpdateModel({ member }: { member: any }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [title, setTitle] = useState(member.title)
   const [firstName, setFirstName] = useState(member.firstName);
   const [lastName, setLastName] = useState(member.lastName);
+  const [address, setAddress] = useState(member.address);
+  const [postalCode, setPostalCode] = useState(member.postalCode);
+  const [phone, setPhone] = useState(member.phone);
   const [email, setEmail] = useState(member.email);
-  const [mobile, setMobile] = useState(member.mobile);
-  const [class_, setClass] = useState(member.class);
-  const [tag, setTag] = useState(member.tag);
+  const [gender, setGender] = useState(member.gender);
+  const [birthDate, setBirthDate] = useState(member.birthDate);
+  const [baptism, setBaptism] = useState(member.baptism);
+  const [hashedPassword, setHashedPassword] = useState(member.hashedPassword);
+  const [centerId, setCenterId] = useState(member.centerId);
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -38,9 +44,8 @@ export default function UpdateModel({ member }: { member: any }) {
         id="crud-modal"
         tabIndex={-1}
         aria-hidden="true"
-        className={`${
-          isModalOpen ? "fixed flex justify-center items-center" : "hidden"
-        } inset-0 w-full h-full bg-black bg-opacity-50 z-50 transition-opacity duration-500 ease-in-out`}
+        className={`${isModalOpen ? "fixed flex justify-center items-center" : "hidden"
+          } inset-0 w-full h-full bg-black bg-opacity-50 z-50 transition-opacity duration-500 ease-in-out`}
       >
         <div className="relative p-4 w-full max-w-md max-h-full">
           {/* <!-- Modal content --> */}
@@ -98,7 +103,25 @@ export default function UpdateModel({ member }: { member: any }) {
                 <div className="grid gap-4 mb-4 grid-cols-2">
                   <div className="col-span-2">
                     <label
-                      htmlFor="firstNam"
+                      htmlFor="title"
+                      className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >
+                      Title
+                    </label>
+                    <input
+                      type="text"
+                      name="firstName"
+                      id="name"
+                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                      value={title}
+                      onChange={(e) => setTitle(e.target.value)}
+                      placeholder="Member first name"
+                      required
+                    />
+                  </div>
+                  <div className="col-span-2">
+                    <label
+                      htmlFor="firstName"
                       className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                     >
                       First Name
@@ -151,62 +174,147 @@ export default function UpdateModel({ member }: { member: any }) {
                   </div>
                   <div className="col-span-2">
                     <label
-                      htmlFor="mobile"
+                      htmlFor="phone"
                       className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                     >
-                      Mobile
+                      Phone
                     </label>
                     <input
                       type="text"
-                      name="mobile"
-                      id="mobile"
+                      name="phone"
+                      id="phone"
                       className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                      value={mobile}
-                      onChange={(e) => setMobile(e.target.value)}
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value)}
                       placeholder="Member mobile"
                     />
                   </div>
+
                   <div className="col-span-2">
                     <label
-                      htmlFor="class"
+                      htmlFor="postalCode"
                       className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                     >
-                      Class
+                      Postal Code
                     </label>
-                    <select
-                      name="class"
-                      id="class"
-                      value={class_}
-                      onChange={(e) => setClass(e.target.value)}
+                    <input
+                      type="text"
+                      name="postalCode"
+                      id="postalCode"
                       className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                    >
-                      <option value="Children">Children</option>
-                      <option value="Teens">Teens</option>
-                      <option value="Baptismal">Baptismal</option>
-                      <option value="Youth">Youth</option>
-                      <option value="Adult">Adult</option>
-                      <option value="Agape">Agape</option>
-                    </select>
+                      value={postalCode}
+                      onChange={(e) => setPostalCode(e.target.value)}
+                      placeholder="Member mobile"
+                    />
                   </div>
+
                   <div className="col-span-2">
                     <label
-                      htmlFor="mobile"
+                      htmlFor="gender"
                       className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                     >
-                      Tag
+                      Gender
                     </label>
-                    <select
-                      name="tag"
-                      id="tag"
-                      value={tag}
-                      onChange={(e) => setTag(e.target.value)}
+                    <input
+                      type="text"
+                      name="gender"
+                      id="gender"
                       className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                      value={gender}
+                      onChange={(e) => setGender(e.target.value)}
+                      placeholder="Member mobile"
+                    />
+                  </div>
+
+                  <div className="col-span-2">
+                    <label
+                      htmlFor="address"
+                      className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                     >
-                      <option value="admin">Admin</option>
-                      <option value="elder">Elder</option>
-                      <option value="pastor">Pastor</option>
-                      <option value="member">Member</option>
-                    </select>
+                      Address
+                    </label>
+                    <input
+                      type="text"
+                      name="address"
+                      id="address"
+                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                      value={address}
+                      onChange={(e) => setAddress(e.target.value)}
+                      placeholder="Member mobile"
+                    />
+                  </div>
+
+                  <div className="col-span-2">
+                    <label
+                      htmlFor="birthDate"
+                      className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >
+                      Birth Date
+                    </label>
+                    <input
+                      type="text"
+                      name="birthDate"
+                      id="birthDate"
+                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                      value={birthDate}
+                      onChange={(e) => setBirthDate(e.target.value)}
+                      placeholder="Member mobile"
+                    />
+                  </div>
+
+
+                  <div className="col-span-2">
+                    <label
+                      htmlFor="baptism"
+                      className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >
+                      Baptism
+                    </label>
+                    <input
+                      type="text"
+                      name="baptism"
+                      id="baptism"
+                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                      value={baptism}
+                      onChange={(e) => setBaptism(e.target.value)}
+                      placeholder="Member mobile"
+                    />
+                  </div>
+                 
+                  <div className="col-span-2">
+                    <label
+                      htmlFor="hashedPassword"
+                      className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >
+                      Hashed Password
+                    </label>
+                    <input
+                      type="text"
+                      name="hashedPassword"
+                      id="hashedPassword"
+                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                      value={hashedPassword}
+                      onChange={(e) => setHashedPassword(e.target.value)}
+                      placeholder="Member mobile"
+                    />
+                  </div>
+
+                  <div className="col-span-2">
+                    <label
+                      htmlFor="centerId"
+                      className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >
+                      Center
+                    </label>
+                    <input
+                      type="text"
+                      name="centerId"
+                      id="centerId"
+                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                      value={centerId}
+                      onChange={(e) => setCenterId(e.target.value)}
+                      placeholder="Member mobile"
+                    />
                   </div>
                 </div>
                 <div className="flex justify-between">
