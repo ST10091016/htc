@@ -1,6 +1,6 @@
 import Image from "next/image";
 import DeleteModel from "./components/Delete/DeleteModel";
-import UpdateModel from "./components/Update/UpdateModel";
+import UpdateModel from "./components/Update/UpdateForm";
 import ViewModel from "./components/View/ViewModel";
 import prisma from "@/lib/prisma/prismadb";
 import { revalidatePath } from "next/cache";
