@@ -7,71 +7,92 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Admin {
-  id    String @id @default(auto()) @map("_id") @db.ObjectId
-  /// Field referred in an index, but found no data to define the type.
-  email Json?  @unique
-}
-
-model Center {
-  id        String   @id @map("_id")
-  contact   String
-  createdAt DateTime @db.Date
-  name      String
-  updatedAt DateTime @db.Date
-}
-
 model Center_Member {
-  id             String   @id @map("_id")
-  address        String
-  baptism        Boolean
-  birthDate      String
-  centerId       String
-  createdAt      DateTime @db.Date
-  email          String   @unique
-  firstName      String
-  gender         String
-  hashedPassword String
-  lastName       String
-  phone          String
-  postalCode     String
+  id             String   @id @default(cuid()) @map("_id")
   title          String
-  updatedAt      DateTime @db.Date
-}
-
-model Convert {
-  id             String   @id @map("_id")
-  centerId       String
-  createdAt      DateTime @db.Date
-  email          String   @unique
   firstName      String
-  gender         String
-  hashedPassword String
   lastName       String
+  address        String
+  postalCode     String
   phone          String
-  updatedAt      DateTime @db.Date
-}
-
-model Secretary {
-  id             String   @id @map("_id")
-  centerId       String
-  createdAt      DateTime @db.Date
   email          String   @unique
-  firstName      String
+  gender         String
+  birthDate      String
+  baptism        Boolean
   hashedPassword String
-  lastName       String
-  updatedAt      DateTime @db.Date
+  centerId       String
+  center         Center   @relation(fields: [centerId], references: [id])
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
 }
 
 model Spiritual_leader {
-  id             String   @id @map("_id")
-  centerId       String
-  createdAt      DateTime @db.Date
-  email          String   @unique
+  id             String   @id @default(cuid()) @map("_id")
   firstName      String
-  gender         String
-  hashedPassword String
   lastName       String
   phone          String
-  updatedAt      DateTime @db.Date
+  email          String   @unique
+  role           String?
+  gender         String
+  hashedPassword String
+  centerId       String
+  center         Center   @relation(fields: [centerId], references: [id])
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+model Convert {
+  id             String   @id @default(cuid()) @map("_id")
+  firstName      String
+  lastName       String
+  phone          String
+  email          String   @unique
+  gender         String
+  status         String?
+  followUp       String?
+  actions        String?
+  hashedPassword String
+  centerId       String
+  center         Center   @relation(fields: [centerId], references: [id])
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+model Admin {
+  id             String   @id @default(cuid()) @map("_id")
+  email          String   @unique
+  hashedPassword String
+  centerId       String
+  center         Center   @relation(fields: [centerId], references: [id])
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+model Secretary {
+  id             String   @id @default(cuid()) @map("_id")
+  firstName      String
+  lastName       String
+  email          String   @unique
+  hashedPassword String
+  centerId       String
+  center         Center   @relation(fields: [centerId], references: [id])
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+model Center {
+  id           String             @id @default(cuid()) @map("_id")
+  name         String
+  location     String?
+  elderName    String?
+  centerLeader String?
+  centerSize   String?
+  contact      String
+  createdAt    DateTime           @default(now())
+  updatedAt    DateTime           @updatedAt
+  members      Center_Member[]
+  leader       Spiritual_leader[]
+  secretary    Secretary[]
+  converts     Convert[]
+  admins       Admin[]
 }

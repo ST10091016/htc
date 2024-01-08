@@ -37,11 +37,7 @@ export const addConvert = async (formData: FormData, date: any) => {
 };
 
 //Update
-export async function UpdateConvert(
-  formData: FormData,
-  memberId: string,
-  // date: any
-) {
+export async function UpdateConvert(formData: FormData, memberId: string) {
   try {
     await prisma.convert
       .update({
@@ -49,14 +45,13 @@ export async function UpdateConvert(
         data: {
           firstName: formData.get("firstName") as string,
           lastName: formData.get("lastName") as string,
-          phone: formData.get("mobile") as string,
+          phone: formData.get("phone") as string,
           email: formData.get("email") as string,
           gender: formData.get("gender") as string,
+          status: formData.get("status") as string,
+          followUp: formData.get("followUp") as string,
+          actions: formData.get("actions") as string,
           centerId: formData.get("centerId") as string,
-          hashedPassword: await bcrypt.hash(
-            formData.get("password") as string,
-            10
-          ),
         },
       })
       .finally(() => {

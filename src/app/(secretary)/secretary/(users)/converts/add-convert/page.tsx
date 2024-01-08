@@ -1,5 +1,5 @@
 import React from "react";
-import AddConvertForm from "../components/Add/AddConvertForm"
+import AddConvertForm from "./Add/AddConvertForm"
 import prisma from "@/lib/prisma/prismadb";
 
 export default async function Page() {
