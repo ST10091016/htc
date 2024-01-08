@@ -10,7 +10,7 @@ export default async function page() {
 
   return (
     <>
-      <UpdateForm convert={converts} />
+      <UpdateForm convert={await converts} />
     </>
   );
 }
