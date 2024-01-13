@@ -1,6 +1,4 @@
-import Image from 'next/image'
-import Home_ from './Home/Home'
-
+import Home_ from "./Home/Home";
 import Header from "../app/common/Header/Header";
 import Footer from "../app/common/Footer/Footer";
 
@@ -11,5 +9,5 @@ export default function Home() {
       <Home_ />
       <Footer />
     </>
-  )
+  );
 }
