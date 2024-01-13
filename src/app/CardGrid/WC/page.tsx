@@ -27,8 +27,8 @@ function Page() {
                     );
                 })}
             </div>
-            <div className="w-full p-4 bg-[url('https://cdn.pixabay.com/photo/2017/01/16/19/40/mountains-1985027_1280.jpg')]  bg-cover bg-center bg-gray-300 bg-blend-multiply text-center h-5  border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
-            </div>
+            {/* <div className="w-full p-4 bg-[url('https://cdn.pixabay.com/photo/2017/01/16/19/40/mountains-1985027_1280.jpg')]  bg-cover bg-center bg-gray-300 bg-blend-multiply text-center h-5  border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+            </div> */}
         </div>
     )
 }
