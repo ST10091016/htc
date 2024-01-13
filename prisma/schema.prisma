@@ -107,12 +107,16 @@ model Event {
   sizeLimit   Int
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
-  rsvps        RSVP[]
+  rsvps       rsvp[]
 }
 
-model RSVP {
+model rsvp {
   id        String   @id @default(cuid()) @map("_id")
-  memberId  String
+  firstName String
+  lastName  String
+  phone     String
+  email     String
+  attendees  Int
   eventId   String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
