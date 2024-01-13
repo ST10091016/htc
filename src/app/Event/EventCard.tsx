@@ -11,11 +11,10 @@ export default async function EventCard() {
         return (
           <div
             key={event.id}
-            className="border text-card-foreground mx-auto max-w-md p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md"
-            data-v0-t="card"
+            className="border text-card-foreground mx-auto w-auto p-2 bg-white dark:bg-gray-800 rounded-lg shadow-md"
           >
-            <div className="flex flex-col space-y-1.5 p-4">
-              <h3 className="tracking-tight text-2xl font-bold text-gray-900 dark:text-gray-100">
+            <div className="flex flex-col space-y-1.5 p-2">
+              <h3 className="tracking-tight text-xl font-bold text-gray-900 dark:text-gray-100">
                 {event.name}
               </h3>
             </div>
@@ -58,7 +57,7 @@ export default async function EventCard() {
                   <circle cx="12" cy="12" r="10"></circle>
                   <polyline points="12 6 12 12 16 14"></polyline>
                 </svg>
-                <span className="text-gray-700 dark:text-gray-300">
+                <span className="text-gray-700 text-sm dark:text-gray-300">
                   {event.time}
                 </span>
               </div>
@@ -81,30 +80,9 @@ export default async function EventCard() {
                   <line x1="12" x2="12" y1="19" y2="22"></line>
                   <circle cx="12" cy="12" r="7"></circle>
                 </svg>
-                <span className="text-gray-700 dark:text-gray-300">
+                <span className="text-gray-700 text-sm dark:text-gray-300">
                   {event.location}
                 </span>
-              </div>
-              <div className="flex items-start space-x-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  className="h-5 w-5 text-gray-500 dark:text-gray-400 mt-1"
-                >
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <path d="M12 16v-4"></path>
-                  <path d="M12 8h.01"></path>
-                </svg>
-                <p className=" text-gray-700 w-auto dark:text-gray-300">
-                  {event.description}
-                </p>
               </div>
 
               <div className="flex items-center space-x-2">
@@ -125,7 +103,7 @@ export default async function EventCard() {
                   <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
                   <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
                 </svg>
-                <span className="text-gray-700 dark:text-gray-300">
+                <span className="text-gray-700 text-sm dark:text-gray-300">
                   Size Limit: {event.sizeLimit}
                 </span>
               </div>
