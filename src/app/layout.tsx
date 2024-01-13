@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "public/styles/globals.css";
-
 import Provider from "@/lib/context/AuthContext";
 import ToasterContext from "@/lib/context/ToasterContext";
 

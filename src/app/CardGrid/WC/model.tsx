@@ -1,20 +1,19 @@
 "use client";
 import React, { useState } from "react";
 
-
 // Define the interface for the 'data' prop
 interface Data {
-    name: string;
-    leader: string;
-    elder?: string;
-    contact: string;
-  }
-  
-  interface ModelProps {
-    data: Data;
-  }
-  
-  export default function Model({ data }: ModelProps) {
+  name: string;
+  leader: string;
+  elder?: string;
+  contact: string;
+}
+
+interface ModelProps {
+  data: Data;
+}
+
+export default function Model({ data }: ModelProps) {
   const [modalVisible, setModalVisible] = useState(false);
 
   const handleOpenModal = () => {
@@ -40,7 +39,6 @@ interface Data {
       {/* <!-- Main modal --> */}
       <div
         id="defaultModal"
-       
         aria-hidden="true"
         className={`fixed top-0 left-0 right-0 z-50 ${
           modalVisible ? "block" : "hidden"
