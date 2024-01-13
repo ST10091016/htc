@@ -1,5 +1,6 @@
 import React from 'react'
 import prisma from '@/lib/prisma/prismadb'
+import RSVPModel from "./RSVP/rsvpModel"
 
 
 export default async function () {
@@ -118,9 +119,7 @@ export default async function () {
                                 </svg>
                                 <span className="text-gray-700 dark:text-gray-300">Size Limit: {event.sizeLimit}</span>
                             </div>
-                            <button className="w-full inline-flex items-center justify-center text-sm ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 h-10 mt-4 bg-black hover:bg-gray-900 text-white font-bold py-2 px-4 rounded">
-                                RSVP
-                            </button>
+                            <RSVPModel event={event} />
                         </div>
                     </div>
 
