@@ -1,6 +1,6 @@
 "use client";
 
-import RSVPButton from "@/app/(secretary)/secretary/(users)/_components/RSVPButton";
+import RSVPButton from "@/app/_components/RSVPButton";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
 import { EventRSVP } from "@/app/_actions/eventRSVP";

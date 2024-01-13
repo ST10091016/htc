@@ -116,7 +116,7 @@ model rsvp {
   lastName  String
   phone     String
   email     String
-  attendees  Int
+  attendees Int
   eventId   String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
