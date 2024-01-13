@@ -1,6 +1,5 @@
 import React from "react";
 import ConvertCard from "./ConvertCard";
-import prisma from "@/lib/prisma/prismadb";
 import Link from "next/link";
 
 export default async function Page() {

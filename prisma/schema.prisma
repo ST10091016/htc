@@ -83,7 +83,6 @@ model Secretary {
 model Center {
   id           String             @id @default(cuid()) @map("_id")
   name         String
-  member       String?
   location     String?
   elderName    String?
   centerLeader String?

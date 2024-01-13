@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 
-export default function ViewModel({ member }: { member: any }) {
+export default function ViewModel({ convert }: { convert: any }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => {
@@ -74,7 +74,7 @@ export default function ViewModel({ member }: { member: any }) {
                   >
                     First Name
                   </label>
-                  {member.firstName}
+                  {convert.firstName}
                 </div>
                 <div className="col-span-1">
                   <label
@@ -83,7 +83,7 @@ export default function ViewModel({ member }: { member: any }) {
                   >
                     Last Name
                   </label>
-                  {member.lastName}
+                  {convert.lastName}
                 </div>
                 <div className="col-span-2">
                   <label
@@ -92,7 +92,7 @@ export default function ViewModel({ member }: { member: any }) {
                   >
                     Email
                   </label>
-                  {member.email}
+                  {convert.email}
                 </div>
                 <div className="col-span-2">
                   <label
@@ -101,7 +101,7 @@ export default function ViewModel({ member }: { member: any }) {
                   >
                     Mobile
                   </label>
-                  {member.phone}
+                  {convert.phone}
                 </div>
                 <div className="col-span-2">
                   <label
@@ -110,7 +110,7 @@ export default function ViewModel({ member }: { member: any }) {
                   >
                     Address
                   </label>
-                  {member.address} - {member.postalCode}
+                  {convert.address} - {convert.postalCode}
                 </div>
                 <div className="col-span-1">
                   <label
@@ -119,7 +119,7 @@ export default function ViewModel({ member }: { member: any }) {
                   >
                     Date of Birth
                   </label>
-                  {member.birthDate}
+                  {convert.birthDate}
                 </div>
                 <div className="col-span-1">
                   <label
@@ -128,7 +128,7 @@ export default function ViewModel({ member }: { member: any }) {
                   >
                     Gender
                   </label>
-                  {member.baptism}
+                  {convert.baptism}
                 </div>
               </div>
             </div>
