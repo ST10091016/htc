@@ -44,8 +44,9 @@ export default function UpdateModel({ member }: { member: any }) {
         id="crud-modal"
         tabIndex={-1}
         aria-hidden="true"
-        className={`${isModalOpen ? "fixed flex justify-center items-center" : "hidden"
-          } inset-0 w-full h-full bg-black bg-opacity-50 z-50 transition-opacity duration-500 ease-in-out`}
+        className={`${
+          isModalOpen ? "fixed flex justify-center items-center" : "hidden"
+        } inset-0 w-full h-full bg-black bg-opacity-50 z-50 transition-opacity duration-500 ease-in-out`}
       >
         <div className="relative p-4 w-full max-w-md max-h-full">
           {/* <!-- Modal content --> */}
@@ -82,15 +83,16 @@ export default function UpdateModel({ member }: { member: any }) {
             <div className="p-6">
               <form
                 action={async (formData: any) => {
-                  const result = await UpdateCenterMember(formData, member.id).then(
-                    (result) => {
-                      if (result === null) {
-                        throw new Error("Project is null");
-                      }
-                      closeModal();
-                      return result;
+                  const result = await UpdateCenterMember(
+                    formData,
+                    member.id
+                  ).then((result) => {
+                    if (result === null) {
+                      throw new Error("Project is null");
                     }
-                  );
+                    closeModal();
+                    return result;
+                  });
                   if (result?.error) {
                     closeModal();
                     toast.error(result?.error as string);
@@ -110,8 +112,8 @@ export default function UpdateModel({ member }: { member: any }) {
                     </label>
                     <input
                       type="text"
-                      name="firstName"
-                      id="name"
+                      name="title"
+                      id="title"
                       className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                       value={title}
                       onChange={(e) => setTitle(e.target.value)}
@@ -119,7 +121,7 @@ export default function UpdateModel({ member }: { member: any }) {
                       required
                     />
                   </div>
-                  <div className="col-span-2">
+                  <div className="col-span-1">
                     <label
                       htmlFor="firstName"
                       className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
@@ -137,7 +139,7 @@ export default function UpdateModel({ member }: { member: any }) {
                       required
                     />
                   </div>
-                  <div className="col-span-2">
+                  <div className="col-span-1">
                     <label
                       htmlFor="firstNam"
                       className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
@@ -172,7 +174,7 @@ export default function UpdateModel({ member }: { member: any }) {
                       placeholder="Member email"
                     />
                   </div>
-                  <div className="col-span-2">
+                  <div className="col-span-1">
                     <label
                       htmlFor="phone"
                       className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
@@ -190,25 +192,7 @@ export default function UpdateModel({ member }: { member: any }) {
                     />
                   </div>
 
-                  <div className="col-span-2">
-                    <label
-                      htmlFor="postalCode"
-                      className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                    >
-                      Postal Code
-                    </label>
-                    <input
-                      type="text"
-                      name="postalCode"
-                      id="postalCode"
-                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                      value={postalCode}
-                      onChange={(e) => setPostalCode(e.target.value)}
-                      placeholder="Member mobile"
-                    />
-                  </div>
-
-                  <div className="col-span-2">
+                  <div className="col-span-1">
                     <label
                       htmlFor="gender"
                       className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
@@ -226,7 +210,25 @@ export default function UpdateModel({ member }: { member: any }) {
                     />
                   </div>
 
-                  <div className="col-span-2">
+                  <div className="col-span-1">
+                    <label
+                      htmlFor="postalCode"
+                      className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >
+                      Postal Code
+                    </label>
+                    <input
+                      type="text"
+                      name="postalCode"
+                      id="postalCode"
+                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                      value={postalCode}
+                      onChange={(e) => setPostalCode(e.target.value)}
+                      placeholder="Member mobile"
+                    />
+                  </div>
+
+                  <div className="col-span-1">
                     <label
                       htmlFor="address"
                       className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
@@ -244,7 +246,7 @@ export default function UpdateModel({ member }: { member: any }) {
                     />
                   </div>
 
-                  <div className="col-span-2">
+                  <div className="col-span-1">
                     <label
                       htmlFor="birthDate"
                       className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
@@ -261,7 +263,6 @@ export default function UpdateModel({ member }: { member: any }) {
                       placeholder="Member mobile"
                     />
                   </div>
-
 
                   <div className="col-span-2">
                     <label
@@ -280,7 +281,7 @@ export default function UpdateModel({ member }: { member: any }) {
                       placeholder="Member mobile"
                     />
                   </div>
-                 
+
                   <div className="col-span-2">
                     <label
                       htmlFor="hashedPassword"

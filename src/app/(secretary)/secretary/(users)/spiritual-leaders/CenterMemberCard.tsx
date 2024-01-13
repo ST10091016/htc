@@ -23,9 +23,7 @@ export default async function CenterMemberCard() {
             >
               <div className="px-4 p-4">
                 <div className="flex flex-col lg:flex-row items-center h-32 lg:h-auto">
-                  <div className="flex-shrink-0">
-
-                  </div>
+                  <div className="flex-shrink-0"></div>
                   <div className="flex-1 min-w-0 ms-4">
                     <p className="flex gap-1 items-center text-sm font-medium text-gray-900 truncate dark:text-white">
                       {member.firstName} {member.lastName}
@@ -36,7 +34,7 @@ export default async function CenterMemberCard() {
                   </div>
                   <div className="inline-flex items-center gap-2 text-sm font-medium text-gray-900 dark:text-gray-300">
                     <ViewModel member={member} />
-                    <UpdateModel member={member} />
+                    <UpdateModel leader={member} />
                     <DeleteModel memberId={member.id} />
                   </div>
                 </div>

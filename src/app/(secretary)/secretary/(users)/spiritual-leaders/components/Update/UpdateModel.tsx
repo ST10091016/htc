@@ -78,21 +78,22 @@ export default function UpdateModel({ leader }: { leader: any }) {
             <div className="p-6">
               <form
                 action={async (formData: any) => {
-                  const result = await UpdateSpiritualLeader(formData, member.id).then(
-                    (result) => {
-                      if (result === null) {
-                        throw new Error("Project is null");
-                      }
-                      closeModal();
-                      return result;
+                  const result = await UpdateSpiritualLeader(
+                    formData,
+                    leader.id
+                  ).then((result) => {
+                    if (result === null) {
+                      throw new Error("Project is null");
                     }
-                  );
+                    closeModal();
+                    return result;
+                  });
                   if (result?.error) {
                     closeModal();
                     toast.error(result?.error as string);
                   } else {
                     closeModal();
-                    toast.success("Project Updated");
+                    toast.success("Spiritual Leader Updated");
                   }
                 }}
               >
@@ -159,34 +160,30 @@ export default function UpdateModel({ leader }: { leader: any }) {
                     </label>
                     <input
                       type="text"
-                      name="mobile"
+                      name="phone"
                       id="mobile"
                       className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                      value={mobile}
-                      onChange={(e) => setMobile(e.target.value)}
+                      value={phone}
+                      onChange={(e) => setPhone(e.target.value)}
                       placeholder="Member mobile"
                     />
                   </div>
                   <div className="col-span-2">
                     <label
-                      htmlFor="class"
+                      htmlFor="gender"
                       className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                     >
-                      Class
+                      Gender
                     </label>
                     <select
-                      name="class"
-                      id="class"
-                      value={class_}
-                      onChange={(e) => setClass(e.target.value)}
+                      name="gender"
+                      id="gender"
+                      value={gender}
+                      onChange={(e) => setGender(e.target.value)}
                       className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                     >
-                      <option value="Children">Children</option>
-                      <option value="Teens">Teens</option>
-                      <option value="Baptismal">Baptismal</option>
-                      <option value="Youth">Youth</option>
-                      <option value="Adult">Adult</option>
-                      <option value="Agape">Agape</option>
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
                     </select>
                   </div>
                   <div className="col-span-2">
@@ -194,20 +191,16 @@ export default function UpdateModel({ leader }: { leader: any }) {
                       htmlFor="mobile"
                       className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                     >
-                      Tag
+                      Role
                     </label>
-                    <select
+                    <input
+                      type="text"
                       name="tag"
                       id="tag"
-                      value={tag}
-                      onChange={(e) => setTag(e.target.value)}
+                      value={role}
+                      onChange={(e) => setRole(e.target.value)}
                       className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                    >
-                      <option value="admin">Admin</option>
-                      <option value="elder">Elder</option>
-                      <option value="pastor">Pastor</option>
-                      <option value="member">Member</option>
-                    </select>
+                    />
                   </div>
                 </div>
                 <div className="flex justify-between">

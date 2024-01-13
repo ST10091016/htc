@@ -45,7 +45,7 @@ export const addCenterMember = async (formData: FormData, date: any) => {
 //Update
 export async function UpdateCenterMember(
   formData: FormData,
-  memberId: string,
+  memberId: string
   // date: any
 ) {
   try {
@@ -58,23 +58,24 @@ export async function UpdateCenterMember(
           lastName: formData.get("lastName") as string,
           address: formData.get("address") as string,
           postalCode: formData.get("postalCode") as string,
-          phone: formData.get("mobile") as string,
+          phone: formData.get("phone") as string,
           email: formData.get("email") as string,
           gender: formData.get("gender") as string,
           // birthDate: date as string,
           baptism:
             (formData.get("baptism") as string) === "true" ? true : false,
           centerId: formData.get("centerId") as string,
-          hashedPassword: await bcrypt.hash(
-            formData.get("password") as string,
-            10
-          ),
+          // hashedPassword: await bcrypt.hash(
+          //   formData.get("password") as string,
+          //   10
+          // ),
         },
       })
       .finally(() => {
         prisma.$disconnect(), revalidatePath(`/`);
       });
   } catch (error) {
+    console.log(error);
     return {
       error: "Something went wrong, try again",
     };
