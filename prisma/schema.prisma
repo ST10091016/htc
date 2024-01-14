@@ -122,3 +122,13 @@ model rsvp {
   updatedAt DateTime @updatedAt
   event     Event    @relation(fields: [eventId], references: [id])
 }
+
+//news model
+model news {
+  id        String   @id @default(cuid()) @map("_id")
+  title     String
+  date      DateTime
+  content   String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
