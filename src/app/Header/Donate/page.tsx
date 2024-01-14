@@ -1,9 +1,12 @@
 'use client'
 import React from 'react'
+import Footer from "../../../app/common/Footer/Footer";
+import Header from "../../../app/common/Header/Header";
 
 function Page() {
   return (
     <div className="">
+      <Header/>
       <div className="mx-5 mt-4 text-center bg-cover h-50  bg-center bg-gray-400 bg-blend-multiply bg-[url('https://images.pexels.com/photos/946186/pexels-photo-946186.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
         <section className="">
           <div className="flex flex-col items-center justify-center px-10 py-3 mx-auto md:h-screen lg:py-0">
@@ -12,7 +15,7 @@ function Page() {
                 <h1 className="text-xl text-center font-bold leading-tight tracking-tight text-white md:text-2xl dark:text-white">
                 Donate To Harvest
                 </h1>
-                <form method="post" action="https://www.payfast.co.za/eng/process?merchant_id=19324088&merchant_key=8c1heh2ogggng&return_url=https://www.example.com/success&cancel_url=https://www.example.com/cancel&notify_url=https://www.example.com/notify&item_name=Test" className="space-y-4 md:space-y-6">
+                <form method="post" action="https://www.payfast.co.za/eng/process" className="space-y-4 md:space-y-6">
                   <div>
                     <label className="block mb-2 text-sm text-left font-medium text-white dark:text-white">First Name</label>
                     <input type="name" required name="name" id="name" className="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter your name here" />
@@ -41,6 +44,16 @@ function Page() {
                     name="notify_url"
                     value="https://www.example.com/notify"
                   />
+                  <input
+                    type="hidden"
+                    name="merchant_id"
+                    value={process.env.MERCHANT_ID}
+                  />
+                  <input
+                    type="hidden"
+                    name="merchant_key"
+                    value={process.env.MERCHANT_KEY}
+                  />
 
                   <div>
                     <label className="block mb-2 text-sm font-medium text-left text-white dark:text-white">Amount</label>
@@ -56,6 +69,7 @@ function Page() {
           </div>
         </section>
       </div>
+      <Footer/>
     </div>
   )
 }

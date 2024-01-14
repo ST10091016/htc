@@ -2,11 +2,15 @@ import React from "react";
 import prisma from "@/lib/prisma/prismadb";
 import RSVPModel from "./RSVP/rsvpModel";
 
+
 export default async function EventCard() {
   const events = await prisma.event.findMany();
 
   return (
+
+    
     <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-6 xl:grid-cols- 2xl:gap-8 w-10/12 m-auto">
+     
       {events.map((event) => {
         return (
           <div

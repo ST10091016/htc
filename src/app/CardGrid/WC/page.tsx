@@ -1,9 +1,13 @@
 import React from "react";
 import Model from "./model";
 import CenterData from "./centerData";
+import Footer from "../../../app/common/Footer/Footer";
+import Header from "../../../app/common/Header/Header";
 
 function Page() {
   return (
+    <>
+    <Header/>
     <div className="mx-4 my-6">
       <div className="w-full p-4 bg-[url('https://cdn.pixabay.com/photo/2017/01/16/19/40/mountains-1985027_1280.jpg')]  bg-cover bg-center bg-gray-300 bg-blend-multiply text-center h-60  border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
         <h1 className="p-16 text-5xl font-bold text-white dark:text-white">
@@ -29,7 +33,9 @@ function Page() {
           );
         })}
       </div>
+      <Footer/>
     </div>
+    </>
   );
 }
 
