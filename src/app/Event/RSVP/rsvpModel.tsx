@@ -33,9 +33,8 @@ export default function Model({ event }: { event: any }) {
       <div
         id="defaultModal"
         aria-hidden="true"
-        className={`fixed top-0 left-0 right-0 z-50 ${
-          modalVisible ? "block" : "hidden"
-        } w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full`}
+        className={`fixed top-0 left-0 right-0 z-50 ${modalVisible ? "block" : "hidden"
+          } w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full`}
       >
         <div className="relative w-full max-w-2xl max-h-full m-auto">
           {/* <!-- Modal content --> */}
@@ -60,9 +59,9 @@ export default function Model({ event }: { event: any }) {
                 >
                   <path
                     stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
                   />
                 </svg>

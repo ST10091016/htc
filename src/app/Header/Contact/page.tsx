@@ -5,7 +5,7 @@ import Footer from "../../../app/common/Footer/Footer";
 import Header from "../../../app/common/Header/Header";
 
 export default function Home() {
-  
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -13,8 +13,8 @@ export default function Home() {
     message: "",
   });
 
-  const handleSubmit = async() => {
-   
+  const handleSubmit = async () => {
+
     try {
       //api for the email, so that it sends to the person receiving the email
       const response = await fetch("/api/send-message", {
@@ -42,16 +42,16 @@ export default function Home() {
   return (
     <>
       <div>
-        <Header/>
-            {/* <div className="bg-[url('../../public/Images/wheat-header.jpeg')] bg-cover bg-center bg-gray-400 bg-blend-multiply h-auto text-white py-24 px-10 object-fill"> */}
-            <div className="bg-[url('https://images.pexels.com/photos/946186/pexels-photo-946186.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] h-2/3 bg-cover bg-center bg-gray-400 bg-blend-multiply text-white py-24 px-10">
-                <div>
-                    <p className="text-6xl text-white text-center font-extrabold">Contact Us</p>
-                    <p className="text-xl  text-white font-semibold mb-10 my-4 text-center leading-none"> Need more details about the church or want to join? Let us know!</p>
-                </div>
-            </div>
+        <Header />
+        {/* <div className="bg-[url('../../public/Images/wheat-header.jpeg')] bg-cover bg-center bg-gray-400 bg-blend-multiply h-auto text-white py-24 px-10 object-fill"> */}
+        <div className="bg-[url('https://images.pexels.com/photos/946186/pexels-photo-946186.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] h-2/3 bg-cover bg-center bg-gray-400 bg-blend-multiply text-white py-24 px-10">
+          <div>
+            <p className="text-6xl text-white text-center font-extrabold">Contact Us</p>
+            <p className="text-xl  text-white font-semibold mb-10 my-4 text-center leading-none"> Need more details about the church or want to join? Let us know!</p>
+          </div>
         </div>
-        
+      </div>
+
       <div className="container my-10 mx-auto md:px-6">
         <section className="mb-32">
           <div className="relative  overflow-hidden h-[10vh] bg-no-repeat bg-[url('https://images.pexels.com/photos/946186/pexels-photo-946186.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] bg-cover bg-center bg-gray-400 bg-blend-multiply text-white py-24 px-10"></div>
@@ -63,13 +63,13 @@ export default function Home() {
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
-                    stroke-width="2"
+                    strokeWidth="2"
                     stroke="currentColor"
                     className="mx-auto mb-6 h-8 w-8 text-primary dark:text-primary-400"
                   >
                     <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                       d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                     />
                   </svg>
@@ -82,18 +82,18 @@ export default function Home() {
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
-                    stroke-width="2"
+                    strokeWidth="2"
                     stroke="currentColor"
                     className="mx-auto mb-6 h-8 w-8 text-primary dark:text-primary-400"
                   >
                     <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                       d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
                     />
                     <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                       d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
                     />
                   </svg>
@@ -109,13 +109,13 @@ export default function Home() {
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
-                    stroke-width="2"
+                    strokeWidth="2"
                     stroke="currentColor"
                     className="mx-auto mb-6 h-8 w-8 text-primary dark:text-primary-400"
                   >
                     <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                       d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
                     />
                   </svg>
@@ -128,13 +128,13 @@ export default function Home() {
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
-                    stroke-width="2"
+                    strokeWidth="2"
                     stroke="currentColor"
                     className="mx-auto mb-6 h-8 w-8 text-primary dark:text-primary-400"
                   >
                     <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                       d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
                     />
                   </svg>
@@ -150,7 +150,7 @@ export default function Home() {
                 <form onSubmit={handleSubmit}>
                   <div className="relative mb-6">
                     <label
-                     
+
                       className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
                     >
                       Name
@@ -187,7 +187,7 @@ export default function Home() {
 
                   <div className="relative mb-6">
                     <label
-                    
+
                       className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
                     >
                       Subject
@@ -205,18 +205,18 @@ export default function Home() {
                   </div>
                   <div className="relative mb-6">
                     <label
-                      
+
                       className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400"
                     >
                       Your message
                     </label>
                     <textarea
                       id="message"
-                      
+
                       onChange={(e) => {
                         setFormData({ ...formData, message: e.target.value });
                       }}
-                      
+
                       required
                       className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                       placeholder="Type your message here"
@@ -236,7 +236,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <Footer/>
+        <Footer />
       </div>
     </>
   );

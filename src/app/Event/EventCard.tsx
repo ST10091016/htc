@@ -8,9 +8,9 @@ export default async function EventCard() {
 
   return (
 
-    
+
     <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-6 xl:grid-cols- 2xl:gap-8 w-10/12 m-auto">
-     
+
       {events.map((event) => {
         return (
           <div
@@ -31,9 +31,9 @@ export default async function EventCard() {
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   className="h-5 w-5 text-gray-500 dark:text-gray-400"
                 >
                   <rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect>
@@ -53,9 +53,9 @@ export default async function EventCard() {
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   className="h-5 w-5 text-gray-500 dark:text-gray-400"
                 >
                   <circle cx="12" cy="12" r="10"></circle>
@@ -73,9 +73,9 @@ export default async function EventCard() {
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   className="h-5 w-5 text-gray-500 dark:text-gray-400"
                 >
                   <line x1="2" x2="5" y1="12" y2="12"></line>
@@ -97,9 +97,9 @@ export default async function EventCard() {
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                   className="h-5 w-5 text-gray-500 dark:text-gray-400"
                 >
                   <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>

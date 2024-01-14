@@ -32,17 +32,17 @@ function Page() {
                   <input
                     type="hidden"
                     name="return_url"
-                    value="https://www.example.com/success"
+                    value={`${process.env.NEXT_URL}/success`}
                   />
                   <input
                     type="hidden"
                     name="cancel_url"
-                    value="https://www.example.com/cancel"
+                    value={`${process.env.NEXT_URL}/cancel`}
                   />
                   <input
                     type="hidden"
                     name="notify_url"
-                    value="https://www.example.com/notify"
+                    value={`${process.env.NEXT_UR}/notify`}
                   />
                   <input
                     type="hidden"
