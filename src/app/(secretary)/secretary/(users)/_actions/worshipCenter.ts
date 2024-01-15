@@ -11,7 +11,6 @@ export const addWorshipCenter = async (formData: FormData) => {
       .create({
         data: {
           name: formData.get("name") as string,
-          member: formData.get("member") as string,
           location: formData.get("location") as string,
           elderName: formData.get("elderName") as string,
           centerLeader: formData.get("centerLeader") as string,
@@ -45,7 +44,6 @@ export async function UpdateWorshipCenter(
         where: { id: memberId },
         data: {
           name: formData.get("name") as string,
-          member: formData.get("member") as string,
           location: formData.get("location") as string,
           elderName: formData.get("elderName") as string,
           centerLeader: formData.get("centerLeader") as string,

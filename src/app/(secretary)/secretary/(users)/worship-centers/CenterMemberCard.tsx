@@ -33,7 +33,7 @@ export default async function CenterMemberCard() {
                   </div>
                   <div className="inline-flex items-center gap-2 text-sm font-medium text-gray-900 dark:text-gray-300">
                     <ViewModel member={center} />
-                    <UpdateModel member={center} />
+                    <UpdateModel center={center} />
                     <DeleteModel memberId={center.id} />
                   </div>
                 </div>
