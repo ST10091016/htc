@@ -8,7 +8,6 @@ import UpdateButton from "../../../_components/UpdateButton";
 export default function UpdateModel({ center }: { center: any }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [name, setName] = useState(center.name);
-  const [member, setMember] = useState(center.member);
   const [location, setLocation] = useState(center.location);
   const [elderName, setElderName] = useState(center.elderName);
   const [centerLeader, setCenterLeader] = useState(center.centerLeader);
@@ -49,7 +48,7 @@ export default function UpdateModel({ center }: { center: any }) {
             {/* <!-- Modal header --> */}
             <div className="flex items-center justify-between p-4 md:p-5 rounded-t">
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                Update Member Details
+                Update Worship Center Details
               </h3>
               <button
                 onClick={closeModal}
@@ -78,10 +77,10 @@ export default function UpdateModel({ center }: { center: any }) {
             <div className="p-6">
               <form
                 action={async (formData: any) => {
-                  const result = await UpdateWorshipCenter(formData, member.id).then(
+                  const result = await UpdateWorshipCenter(formData, center.id).then(
                     (result) => {
                       if (result === null) {
-                        throw new Error("Project is null");
+                        throw new Error("Center is null");
                       }
                       closeModal();
                       return result;
@@ -99,115 +98,39 @@ export default function UpdateModel({ center }: { center: any }) {
                 <div className="grid gap-4 mb-4 grid-cols-2">
                   <div className="col-span-2">
                     <label
-                      htmlFor="firstNam"
+                      htmlFor="name"
                       className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                     >
-                      First Name
+                      Name
                     </label>
                     <input
                       type="text"
-                      name="firstName"
+                      name="name"
                       id="name"
                       className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                      value={firstName}
-                      onChange={(e) => setFirstName(e.target.value)}
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
                       placeholder="Member first name"
                       required
                     />
                   </div>
+
                   <div className="col-span-2">
                     <label
-                      htmlFor="firstNam"
+                      htmlFor="phone"
                       className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                     >
-                      Last Name
+                      Contact
                     </label>
                     <input
-                      type="text"
-                      name="lastName"
-                      id="name"
+                      type="phone"
+                      name="phone"
+                      id="phone"
                       className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                      value={lastName}
-                      onChange={(e) => setLastName(e.target.value)}
-                      placeholder="Member last name"
-                      required
-                    />
-                  </div>
-                  <div className="col-span-2">
-                    <label
-                      htmlFor="email"
-                      className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                    >
-                      Email
-                    </label>
-                    <input
-                      type="email"
-                      name="email"
-                      id="email"
-                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      placeholder="Member email"
-                    />
-                  </div>
-                  <div className="col-span-2">
-                    <label
-                      htmlFor="mobile"
-                      className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                    >
-                      Mobile
-                    </label>
-                    <input
-                      type="text"
-                      name="mobile"
-                      id="mobile"
-                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                      value={mobile}
-                      onChange={(e) => setMobile(e.target.value)}
+                      value={contact}
+                      onChange={(e) => setContact(e.target.value)}
                       placeholder="Member mobile"
                     />
-                  </div>
-                  <div className="col-span-2">
-                    <label
-                      htmlFor="class"
-                      className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                    >
-                      Class
-                    </label>
-                    <select
-                      name="class"
-                      id="class"
-                      value={class_}
-                      onChange={(e) => setClass(e.target.value)}
-                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                    >
-                      <option value="Children">Children</option>
-                      <option value="Teens">Teens</option>
-                      <option value="Baptismal">Baptismal</option>
-                      <option value="Youth">Youth</option>
-                      <option value="Adult">Adult</option>
-                      <option value="Agape">Agape</option>
-                    </select>
-                  </div>
-                  <div className="col-span-2">
-                    <label
-                      htmlFor="mobile"
-                      className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                    >
-                      Tag
-                    </label>
-                    <select
-                      name="tag"
-                      id="tag"
-                      value={tag}
-                      onChange={(e) => setTag(e.target.value)}
-                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                    >
-                      <option value="admin">Admin</option>
-                      <option value="elder">Elder</option>
-                      <option value="pastor">Pastor</option>
-                      <option value="member">Member</option>
-                    </select>
                   </div>
                 </div>
                 <div className="flex justify-between">
