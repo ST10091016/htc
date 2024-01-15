@@ -4,7 +4,7 @@ import { PrismaAdapter } from "@auth/prisma-adapter";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcrypt";
 
-const AuthOptions: any = {
+const authOptions: AuthOptions = {
   adapter: PrismaAdapter(prisma),
   providers: [
     CredentialsProvider({
@@ -151,5 +151,5 @@ const AuthOptions: any = {
   },
 };
 
-const handler = NextAuth(AuthOptions);
+const handler = NextAuth(authOptions);
 export { handler as GET, handler as POST };
