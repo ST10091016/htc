@@ -2,17 +2,10 @@
 
 import React, { useEffect, useRef, useState } from "react";
 
-export default function VideoCard() {
-
-  const videos: any = [
-    {
-      id: 1,
-      link: "https://www.youtube.com/embed/LXb3EKWsInQ?autoplay=1&mute=1"
-    }
-  ]
+export default function VideoCard({videos } : {videos: any}) {
 
 
-    const [videoOpen, setvideoOpen] = useState(false);
+  const [videoOpen, setvideoOpen] = useState(false);
 
   if (videos.length === 0) {
     return (
@@ -47,33 +40,32 @@ export default function VideoCard() {
 
     <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-6 xl:grid-cols- 2xl:gap-8 w-10/12 m-auto">
 
-      {videos.map((video:any) => {
+      {videos.map((video: any) => {
         return (
           <div key={video.id}>
-          <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-            <a href="#">
-              <img className="rounded-t-lg" src="/docs/images/blog/image-1.jpg" alt="" />
-            </a>
-            <div className="p-5">
+            <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
               <a href="#">
-                <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy technology acquisitions 2021</h5>
+                <img className="rounded-t-lg" src="/docs/images/blog/image-1.jpg" alt="" />
               </a>
-              <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+              <div className="p-5">
+                <a href="#">
+                  <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{video.title}</h5>
+                </a>
+                <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{video.date.toString()}</p>
                 <button onClick={() => setvideoOpen(true)} className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                Read more
-                <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
-                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
-                </svg>
-              </button>
+                  Watch
+                  <svg className="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9" />
+                  </svg>
+                </button>
+              </div>
             </div>
-          </div>
-
 
             {videoOpen && (
               <div className="fixed left-0 top-0 z-50 flex h-screen w-full items-center justify-center bg-black bg-opacity-70">
                 <div className="mx-auto bg-white">
                   <>
-                    <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2F100064343185443%2Fvideos%2F1107040467150120%2F&show_text=false&width=267&t=0" width="267" height="476"  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen></iframe>
+                    <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2F100064343185443%2Fvideos%2F1107040467150120%2F&show_text=false&width=267&t=0" width="267" height="476" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen></iframe>
                   </>
                 </div>
 
