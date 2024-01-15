@@ -2,11 +2,14 @@ import React from 'react'
 import Image from 'next/image';
 import Footer from "../../../app/common/Footer/Footer";
 import Header from "../../../app/common/Header/Header";
+import VideoCard from './VideoCard';
+import prisma from '@/lib/prisma/prismadb';
 
-function Page() {
+async function Page() {
+    const videos = await prisma.videos.findMany()
     return (
         <div >
-            <Header/>
+            <Header />
             <div>
                 {/* <div className="bg-[url('../../public/Images/wheat-header.jpeg')] bg-cover bg-center bg-gray-400 bg-blend-multiply h-auto text-white py-24 px-10 object-fill"> */}
                 <div className="bg-[url('https://images.pexels.com/photos/946186/pexels-photo-946186.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] h-2/3 bg-cover bg-center bg-gray-400 bg-blend-multiply text-white py-24 px-10">
@@ -35,7 +38,9 @@ function Page() {
                 </div>
             </div>
 
-          <Footer/>
+            <VideoCard  />
+
+            <Footer />
         </div>
     )
 }

@@ -6,7 +6,7 @@ import AddButton from "../(users)/_components/AddButton";
 import { addEvent } from "../(users)/_actions/events";
 // import UpdateButton from "../../../_components/UpdateButton";
 
-export default function AddNews() {
+export default function AddEvent() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   

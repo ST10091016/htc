@@ -4,7 +4,7 @@ import { PrismaAdapter } from "@auth/prisma-adapter";
 import CredentialsProvider from "next-auth/providers/credentials";
 import bcrypt from "bcrypt";
 
-export const authOptions: any = {
+const authOptions: any = {
   adapter: PrismaAdapter(prisma),
   providers: [
     CredentialsProvider({
@@ -25,12 +25,12 @@ export const authOptions: any = {
           throw new Error("Please enter an email and password");
         }
 
-        if(!credentials.role) {
+        if (!credentials.role) {
           throw new Error("Please select a role");
         }
-        
-        if(credentials.role === "admin") {
-          console.log("admin selected")
+
+        if (credentials.role === "admin") {
+          console.log("admin selected");
           // check to see if user exists
           const user = await prisma.admin.findUnique({
             where: {
@@ -54,9 +54,8 @@ export const authOptions: any = {
           }
 
           return user;
-        }
-        else if(credentials.role === "centerMember") {
-          console.log("center member selected")
+        } else if (credentials.role === "centerMember") {
+          console.log("center member selected");
           // check to see if user exists
           const user = await prisma.center_Member.findUnique({
             where: {
@@ -80,9 +79,8 @@ export const authOptions: any = {
           }
 
           return user;
-        }
-        else if(credentials.role === "secretary") {
-          console.log("secretary selected")
+        } else if (credentials.role === "secretary") {
+          console.log("secretary selected");
           // check to see if user exists
           const user = await prisma.secretary.findUnique({
             where: {
@@ -106,9 +104,8 @@ export const authOptions: any = {
           }
 
           return user;
-        }
-        else if(credentials.role === "convert") {
-          console.log("convert selected")
+        } else if (credentials.role === "convert") {
+          console.log("convert selected");
           // check to see if user exists
           const user = await prisma.convert.findUnique({
             where: {
