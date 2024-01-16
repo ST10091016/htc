@@ -22,3 +22,20 @@ export const addNews = async (formData: FormData) => {
     };
   }
 };
+
+//DeleteNews
+export async function DeleteNews(Id: string) {
+  try {
+    await prisma.news
+      .delete({
+        where: { id: Id },
+      })
+      .finally(() => {
+        prisma.$disconnect(), revalidatePath(`/`);
+      });
+  } catch (error) {
+    return {
+      error: "Something went wrong, try again",
+    };
+  }
+}

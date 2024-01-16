@@ -22,3 +22,20 @@ export const addVideo = async (formData: FormData) => {
     };
   }
 };
+
+//DeleteVideo
+export async function DeleteVideo(Id: string) {
+  try {
+    await prisma.videos
+      .delete({
+        where: { id: Id },
+      })
+      .finally(() => {
+        prisma.$disconnect(), revalidatePath(`/`);
+      });
+  } catch (error) {
+    return {
+      error: "Something went wrong, try again",
+    };
+  }
+}
