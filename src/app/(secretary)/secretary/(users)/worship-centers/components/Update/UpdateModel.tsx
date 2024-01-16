@@ -123,13 +123,85 @@ export default function UpdateModel({ center }: { center: any }) {
                       Contact
                     </label>
                     <input
-                      type="phone"
+                      type="number"
                       name="phone"
                       id="phone"
                       className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                       value={contact}
                       onChange={(e) => setContact(e.target.value)}
                       placeholder="Member mobile"
+                    />
+                  </div>
+
+
+                  <div className="col-span-2">
+                    <label
+                      htmlFor="location "
+                      className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >
+                      Location 
+                    </label>
+                    <input
+                      type="text"
+                      name="location"
+                      id="location "
+                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                      value={location}
+                      onChange={(e) => setLocation(e.target.value)}
+                      placeholder="Location"
+                    />
+                  </div>
+
+
+                  <div className="col-span-2">
+                    <label
+                      htmlFor="elderName"
+                      className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >
+                      Elder Name
+                    </label>
+                    <input
+                      type="text"
+                      name="elderName"
+                      id="elderName "
+                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                      value={elderName}
+                      onChange={(e) => setElderName(e.target.value)}
+
+                    />
+                  </div>
+
+                  <div className="col-span-2">
+                    <label
+                      htmlFor="centerLeader"
+                      className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >
+                      Center Leader
+                    </label>
+                    <input
+                      type="text"
+                      name="centerLeader"
+                      id="centerLeader"
+                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                      value={centerLeader}
+                      onChange={(e) => setCenterLeader(e.target.value)}
+                    />
+                  </div>
+
+                  <div className="col-span-2">
+                    <label
+                      htmlFor="centerSize"
+                      className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >
+                      Center Size
+                    </label>
+                    <input
+                      type="number"
+                      name="centerSize"
+                      id="centerSize"
+                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                      value={centerSize}
+                      onChange={(e) => setCenterSize(e.target.value)}
                     />
                   </div>
                 </div>

@@ -48,13 +48,14 @@ export async function UpdateWorshipCenter(
           elderName: formData.get("elderName") as string,
           centerLeader: formData.get("centerLeader") as string,
           centerSize: formData.get("centerSize") as string,
-          contact: formData.get("mobile") as string,
+          contact: formData.get("phone") as string,
         },
       })
       .finally(() => {
         prisma.$disconnect(), revalidatePath(`/`);
       });
   } catch (error) {
+    console.log(error)
     return {
       error: "Something went wrong, try again",
     };

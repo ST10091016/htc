@@ -29,9 +29,8 @@ export default function ViewModel({ member }: { member: any }) {
         id="crud-modal"
         tabIndex={-1}
         aria-hidden="true"
-        className={`${
-          isModalOpen ? "fixed flex justify-center items-center" : "hidden"
-        } inset-0 w-full h-full bg-black bg-opacity-50 z-50 transition-opacity duration-500 ease-in-out`}
+        className={`${isModalOpen ? "fixed flex justify-center items-center" : "hidden"
+          } inset-0 w-full h-full bg-black bg-opacity-50 z-50 transition-opacity duration-500 ease-in-out`}
       >
         <div className="relative p-4 w-full max-w-md max-h-full">
           {/* <!-- Modal content --> */}
@@ -39,7 +38,7 @@ export default function ViewModel({ member }: { member: any }) {
             {/* <!-- Modal header --> */}
             <div className="flex items-center justify-between p-4 md:p-5 rounded-t">
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                Member Details
+                Worship Center Details
               </h3>
               <button
                 onClick={closeModal}
@@ -67,68 +66,59 @@ export default function ViewModel({ member }: { member: any }) {
             {/* <!-- Modal body --> */}
             <div className="p-6">
               <div className="grid gap-4 mb-4 grid-cols-2">
-                <div className="col-span-1">
+                <div className="col-span-2 md:col-span-1">
                   <label
-                    htmlFor="firstNam"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    htmlFor="name"
+                    className="block mb-2 text-sm font-extrabold text-gray-900 dark:text-white"
                   >
-                    First Name
+                    Name
                   </label>
-                  {member.firstName}
+                  {member.name}
                 </div>
-                <div className="col-span-1">
+                <div className="col-span-2 md:col-span-1">
                   <label
-                    htmlFor="firstNam"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    htmlFor="location"
+                    className="block mb-2 text-sm font-extrabold text-gray-900 dark:text-white"
                   >
-                    Last Name
+                    Location
                   </label>
-                  {member.lastName}
+                  {member.location}
                 </div>
-                <div className="col-span-2">
+                <div className="col-span-2 md:col-span-1">
                   <label
-                    htmlFor="email"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    htmlFor="elderName"
+                    className="block mb-2 text-sm font-extrabold text-gray-900 dark:text-white"
                   >
-                    Email
+                    Eldername
                   </label>
-                  {member.email}
+                  {member.elderName}
                 </div>
-                <div className="col-span-2">
+                <div className="col-span-2 md:col-span-1">
                   <label
-                    htmlFor="mobile"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    htmlFor="centerLeader"
+                    className="block mb-2 text-sm font-extrabold text-gray-900 dark:text-white"
                   >
-                    Mobile
+                    Center Leader
                   </label>
-                  {member.phone}
+                  {member.centerLeader}
                 </div>
-                <div className="col-span-2">
+                <div className="col-span-2 md:col-span-1">
                   <label
-                    htmlFor="address"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    htmlFor="centerSize"
+                    className="block mb-2 text-sm font-extrabold text-gray-900 dark:text-white"
                   >
-                    Address
+                    Center Size
                   </label>
-                  {member.address} - {member.postalCode}
+                  {member.centerSize}
                 </div>
-                <div className="col-span-1">
+                <div className="col-span-2 md:col-span-1">
                   <label
-                    htmlFor="dateOfBirth"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    htmlFor="contact"
+                    className="block mb-2 text-sm font-extrabold text-gray-900 dark:text-white"
                   >
-                    Date of Birth
+                    Contact
                   </label>
-                  {member.birthDate}
-                </div>
-                <div className="col-span-1">
-                  <label
-                    htmlFor="gender"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                  >
-                    Gender
-                  </label>
-                  {member.baptism}
+                  {member.contact}
                 </div>
               </div>
             </div>

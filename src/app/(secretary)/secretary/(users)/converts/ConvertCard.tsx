@@ -23,7 +23,7 @@ export default async function ConvertCard() {
                 <div className="flex flex-col lg:flex-row items-center h-32 lg:h-auto">
                   <div className="flex-shrink-0"></div>
                   <div className="flex-1 min-w-0 ms-4">
-                    <p className="flex gap-1 items-center text-sm font-medium text-gray-900 truncate dark:text-white">
+                    <p className="text-sm text-center lg:text-start text-gray-500 truncate dark:text-gray-400">
                       {convert.firstName} {convert.lastName}
                     </p>
                     <p className="text-sm text-center lg:text-start text-gray-500 truncate dark:text-gray-400">

@@ -48,7 +48,7 @@ export default function UpdateModel({ member }: { member: any }) {
           isModalOpen ? "fixed flex justify-center items-center" : "hidden"
         } inset-0 w-full h-full bg-black bg-opacity-50 z-50 transition-opacity duration-500 ease-in-out`}
       >
-        <div className="relative p-4 w-full max-w-md max-h-full">
+        <div className="relative p-4 w-full max-h-full">
           {/* <!-- Modal content --> */}
           <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
             {/* <!-- Modal header --> */}
@@ -88,7 +88,7 @@ export default function UpdateModel({ member }: { member: any }) {
                     member.id
                   ).then((result) => {
                     if (result === null) {
-                      throw new Error("Project is null");
+                      throw new Error("Member is null");
                     }
                     closeModal();
                     return result;
@@ -98,12 +98,12 @@ export default function UpdateModel({ member }: { member: any }) {
                     toast.error(result?.error as string);
                   } else {
                     closeModal();
-                    toast.success("Project Updated");
+                    toast.success("Member Updated");
                   }
                 }}
               >
-                <div className="grid gap-4 mb-4 grid-cols-2">
-                  <div className="col-span-2">
+                <div className="grid gap-4 mb-4 grid-cols-1 md:grid-cols-3">
+                  <div className="col-span-1">
                     <label
                       htmlFor="title"
                       className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
@@ -157,7 +157,7 @@ export default function UpdateModel({ member }: { member: any }) {
                       required
                     />
                   </div>
-                  <div className="col-span-2">
+                  <div className="col-span-1">
                     <label
                       htmlFor="email"
                       className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
@@ -172,6 +172,23 @@ export default function UpdateModel({ member }: { member: any }) {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="Member email"
+                    />
+                  </div>
+                  <div className="col-span-1">
+                    <label
+                      htmlFor="birthDate"
+                      className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    >
+                      Birth Date
+                    </label>
+                    <input
+                      type="text"
+                      name="birthDate"
+                      id="birthDate"
+                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
+                      value={birthDate}
+                      onChange={(e) => setBirthDate(e.target.value)}
+                      placeholder="Member mobile"
                     />
                   </div>
                   <div className="col-span-1">
@@ -248,24 +265,6 @@ export default function UpdateModel({ member }: { member: any }) {
 
                   <div className="col-span-1">
                     <label
-                      htmlFor="birthDate"
-                      className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                    >
-                      Birth Date
-                    </label>
-                    <input
-                      type="text"
-                      name="birthDate"
-                      id="birthDate"
-                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                      value={birthDate}
-                      onChange={(e) => setBirthDate(e.target.value)}
-                      placeholder="Member mobile"
-                    />
-                  </div>
-
-                  <div className="col-span-2">
-                    <label
                       htmlFor="baptism"
                       className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                     >
@@ -282,25 +281,24 @@ export default function UpdateModel({ member }: { member: any }) {
                     />
                   </div>
 
-                  <div className="col-span-2">
+                  <div className="col-span-1">
                     <label
                       htmlFor="hashedPassword"
                       className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                     >
-                      Hashed Password
+                      New Password
                     </label>
                     <input
                       type="text"
                       name="hashedPassword"
                       id="hashedPassword"
                       className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                      value={hashedPassword}
                       onChange={(e) => setHashedPassword(e.target.value)}
-                      placeholder="Member mobile"
+                      placeholder="Enter new password"
                     />
                   </div>
 
-                  <div className="col-span-2">
+                  <div className="col-span-1">
                     <label
                       htmlFor="centerId"
                       className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"

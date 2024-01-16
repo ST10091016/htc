@@ -5,10 +5,13 @@ import toast from "react-hot-toast";
 import { UpdateConvert } from "../../../_actions/converts";
 import UpdateButton from "../../../_components/UpdateButton";
 import { useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 export default function UpdateForm({ convert, centers }: { convert: any; centers: any }) {
   const searchParams = useSearchParams();
   const search = searchParams.get("id");
+
+  const router = useRouter()
 
   const convertData = convert.filter(
     (convert: any) => convert.id === search
@@ -41,6 +44,7 @@ export default function UpdateForm({ convert, centers }: { convert: any; centers
               toast.error(result?.error as string);
             } else {
               toast.success("Convert Updated");
+              router.push('/secretary/converts')
 
             }
           }}

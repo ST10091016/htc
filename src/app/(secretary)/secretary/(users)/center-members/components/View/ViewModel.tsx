@@ -66,7 +66,7 @@ export default function ViewModel({ member }: { member: any }) {
             {/* <!-- Modal body --> */}
             <div className="p-6">
               <div className="grid gap-4 mb-4 grid-cols-2 border-black ">
-                <div className="col-span-1">
+                <div className="col-span-2 md:col-span-1">
                   <label
                     htmlFor="firstNam"
                     className="block font-extrabold mb-2 text-sm text-gray-900 dark:text-white"
@@ -75,7 +75,7 @@ export default function ViewModel({ member }: { member: any }) {
                   </label>
                   {member.firstName}
                 </div>
-                <div className="col-span-1">
+                <div className="col-span-2 md:col-span-1">
                   <label
                     htmlFor="firstNam"
                     className="block mb-2 text-sm font-extrabold text-gray-900 dark:text-white"
@@ -84,7 +84,7 @@ export default function ViewModel({ member }: { member: any }) {
                   </label>
                   {member.lastName}
                 </div>
-                <div className="col-span-1">
+                <div className="col-span-2 md:col-span-1">
                   <label
                     htmlFor="baptism"
                     className="block mb-2 text-sm font-extrabold text-gray-900 dark:text-white"
@@ -94,7 +94,7 @@ export default function ViewModel({ member }: { member: any }) {
                   {member.baptism}
                 </div>
 
-                <div className="col-span-1">
+                <div className="col-span-2 md:col-span-1">
                   <label
                     htmlFor="postalCode"
                     className="block mb-2 text-sm font-extrabold text-gray-900 dark:text-white"
@@ -104,7 +104,7 @@ export default function ViewModel({ member }: { member: any }) {
                   {member.postalCode}
                 </div>
 
-                <div className="col-span-1">
+                <div className="col-span-2 md:col-span-1">
                   <label
                     htmlFor="email"
                     className="block mb-2 text-sm font-extrabold text-gray-900 dark:text-white"
@@ -113,7 +113,7 @@ export default function ViewModel({ member }: { member: any }) {
                   </label>
                   {member.email}
                 </div>
-                <div className="col-span-1">
+                <div className="col-span-2 md:col-span-1">
                   <label
                     htmlFor="phone"
                     className="block mb-2 text-sm font-extrabold text-gray-900 dark:text-white"
@@ -122,7 +122,7 @@ export default function ViewModel({ member }: { member: any }) {
                   </label>
                   {member.phone}
                 </div>
-                <div className="col-span-1">
+                <div className="col-span-2 md:col-span-1">
                   <label
                     htmlFor="address"
                     className="block mb-2 text-sm font-extrabold text-gray-900 dark:text-white"
@@ -131,7 +131,7 @@ export default function ViewModel({ member }: { member: any }) {
                   </label>
                   {member.address} - {member.postalCode}
                 </div>
-                <div className="col-span-1">
+                <div className="col-span-2 md:col-span-1">
                   <label
                     htmlFor="dateOfBirth"
                     className="block mb-2 text-sm font-extrabold text-gray-900 dark:text-white"
@@ -140,7 +140,7 @@ export default function ViewModel({ member }: { member: any }) {
                   </label>
                   {member.birthDate}
                 </div>
-                <div className="col-span-1">
+                <div className="col-span-2 md:col-span-1">
                   <label
                     htmlFor="gender"
                     className="block mb-2 text-sm font-extrabold text-gray-900 dark:text-white"

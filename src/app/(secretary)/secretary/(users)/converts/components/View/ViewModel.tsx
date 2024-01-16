@@ -67,7 +67,7 @@ export default function ViewModel({ convert }: { convert: any }) {
             {/* <!-- Modal body --> */}
             <div className="p-6">
               <div className="grid gap-4 mb-4 grid-cols-2">
-                <div className="col-span-1">
+                <div className="col-span-2 md:col-span-1">
                   <label
                     htmlFor="firstNam"
                     className="block mb-2 text-sm font-extrabold text-gray-900 dark:text-white"
@@ -76,7 +76,7 @@ export default function ViewModel({ convert }: { convert: any }) {
                   </label>
                   {convert.firstName}
                 </div>
-                <div className="col-span-1">
+                <div className="col-span-2 md:col-span-1">
                   <label
                     htmlFor="firstNam"
                     className="block mb-2 text-sm font-extrabold text-gray-900 dark:text-white"
@@ -105,7 +105,7 @@ export default function ViewModel({ convert }: { convert: any }) {
                 </div>
                
             
-                <div className="col-span-1">
+                <div className="col-span-2 md:col-span-1">
                   <label
                     htmlFor="gender"
                     className="block mb-2 text-sm font-extrabold text-gray-900 dark:text-white"
@@ -115,7 +115,7 @@ export default function ViewModel({ convert }: { convert: any }) {
                   {convert.gender}
                 </div>
 
-                <div className="col-span-1">
+                <div className="col-span-2 md:col-span-1">
                   <label
                     htmlFor="status"
                     className="block mb-2 text-sm font-extrabold text-gray-900 dark:text-white"
@@ -125,7 +125,7 @@ export default function ViewModel({ convert }: { convert: any }) {
                   {convert.status}
                 </div>
 
-                <div className="col-span-1">
+                <div className="col-span-2 md:col-span-1">
                   <label
                     htmlFor="followUp"
                     className="block mb-2 text-sm font-extrabold text-gray-900 dark:text-white"
@@ -135,7 +135,7 @@ export default function ViewModel({ convert }: { convert: any }) {
                   {convert.followUp}
                 </div>
                 
-                <div className="col-span-1">
+                <div className="col-span-2 md:col-span-1">
                   <label
                     htmlFor="actions"
                     className="block mb-2 text-sm font-extrabold text-gray-900 dark:text-white"
