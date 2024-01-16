@@ -3,13 +3,12 @@
 import React, { useState, useRef } from "react";
 import toast from "react-hot-toast";
 import AddButton from "../(users)/_components/AddButton";
-import { addNews } from "../(users)/_actions/news";
+import { addVideo} from "../(users)/_actions/videos";
 // import UpdateButton from "../../../_components/UpdateButton";
 
-export default function AddEvent() {
+export default function AddVideo() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  
   const openModal = () => {
     setIsModalOpen(true);
   };
@@ -26,7 +25,7 @@ export default function AddEvent() {
         type="button"
         className="block text-white bg-blue-700 shadow-lg hover:shadow-xl font-medium rounded-lg text-sm px-2 py-2 text-center transition duration-300 ease-in-out"
       >
-        Add Event
+        Add Video
       </button>
 
       {/* <!-- Main modal --> */}
@@ -44,7 +43,7 @@ export default function AddEvent() {
             {/* <!-- Modal header --> */}
             <div className="flex items-center justify-between p-4 md:p-5 rounded-t">
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                Event Details
+                Video Details
               </h3>
               <button
                 onClick={closeModal}
@@ -73,7 +72,7 @@ export default function AddEvent() {
             <div className="p-6">
               <form
                 action={async (formData: any) => {
-                  const result = await addNews(formData).then((result) => {
+                  const result = await addVideo(formData).then((result) => {
                     if (result === null) {
                       throw new Error("Project is null");
                     }
@@ -85,7 +84,7 @@ export default function AddEvent() {
                     toast.error(result?.error as string);
                   } else {
                     closeModal();
-                    toast.success("News Added Successfully");
+                    toast.success("Video Added Successfully");
                   }
                 }}
               >
