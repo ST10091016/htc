@@ -4,7 +4,6 @@ import React, { useState, useRef } from "react";
 import toast from "react-hot-toast";
 import AddButton from "../(users)/_components/AddButton";
 import { addNews } from "../(users)/_actions/news";
-// import UpdateButton from "../../../_components/UpdateButton";
 
 export default function AddEvent() {
   const [isModalOpen, setIsModalOpen] = useState(false);

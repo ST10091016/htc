@@ -4,7 +4,6 @@ import React, { useState, useRef } from "react";
 import toast from "react-hot-toast";
 import AddButton from "../(users)/_components/AddButton";
 import { addVideo} from "../(users)/_actions/videos";
-// import UpdateButton from "../../../_components/UpdateButton";
 
 export default function AddVideo() {
   const [isModalOpen, setIsModalOpen] = useState(false);
