@@ -37,7 +37,7 @@ async function Page() {
                     </a>
                 </div>
             </div>
-
+<br/>
             <VideoCard videos={videos} />
 
             <Footer />

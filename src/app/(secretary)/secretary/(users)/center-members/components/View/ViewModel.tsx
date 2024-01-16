@@ -29,9 +29,8 @@ export default function ViewModel({ member }: { member: any }) {
         id="crud-modal"
         tabIndex={-1}
         aria-hidden="true"
-        className={`${
-          isModalOpen ? "fixed flex justify-center items-center" : "hidden"
-        } inset-0 w-full h-full bg-black bg-opacity-50 z-50 transition-opacity duration-500 ease-in-out`}
+        className={`${isModalOpen ? "fixed flex justify-center items-center" : "hidden"
+          } inset-0 w-full h-full bg-black bg-opacity-50 z-50 transition-opacity duration-500 ease-in-out`}
       >
         <div className="relative p-4 w-full max-w-md max-h-full">
           {/* <!-- Modal content --> */}
@@ -39,7 +38,7 @@ export default function ViewModel({ member }: { member: any }) {
             {/* <!-- Modal header --> */}
             <div className="flex items-center justify-between p-4 md:p-5 rounded-t">
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                Member Details
+                Center Member Details
               </h3>
               <button
                 onClick={closeModal}
@@ -66,11 +65,11 @@ export default function ViewModel({ member }: { member: any }) {
             </div>
             {/* <!-- Modal body --> */}
             <div className="p-6">
-              <div className="grid gap-4 mb-4 grid-cols-2">
+              <div className="grid gap-4 mb-4 grid-cols-2 border-black ">
                 <div className="col-span-1">
                   <label
                     htmlFor="firstNam"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    className="block font-extrabold mb-2 text-sm text-gray-900 dark:text-white"
                   >
                     First Name
                   </label>
@@ -79,34 +78,54 @@ export default function ViewModel({ member }: { member: any }) {
                 <div className="col-span-1">
                   <label
                     htmlFor="firstNam"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    className="block mb-2 text-sm font-extrabold text-gray-900 dark:text-white"
                   >
                     Last Name
                   </label>
                   {member.lastName}
                 </div>
-                <div className="col-span-2">
+                <div className="col-span-1">
+                  <label
+                    htmlFor="baptism"
+                    className="block mb-2 text-sm font-extrabold text-gray-900 dark:text-white"
+                  >
+                    Baptism
+                  </label>
+                  {member.baptism}
+                </div>
+
+                <div className="col-span-1">
+                  <label
+                    htmlFor="postalCode"
+                    className="block mb-2 text-sm font-extrabold text-gray-900 dark:text-white"
+                  >
+                    Postal Code
+                  </label>
+                  {member.postalCode}
+                </div>
+
+                <div className="col-span-1">
                   <label
                     htmlFor="email"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    className="block mb-2 text-sm font-extrabold text-gray-900 dark:text-white"
                   >
                     Email
                   </label>
                   {member.email}
                 </div>
-                <div className="col-span-2">
+                <div className="col-span-1">
                   <label
-                    htmlFor="mobile"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    htmlFor="phone"
+                    className="block mb-2 text-sm font-extrabold text-gray-900 dark:text-white"
                   >
-                    Mobile
+                    Phone
                   </label>
                   {member.phone}
                 </div>
-                <div className="col-span-2">
+                <div className="col-span-1">
                   <label
                     htmlFor="address"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    className="block mb-2 text-sm font-extrabold text-gray-900 dark:text-white"
                   >
                     Address
                   </label>
@@ -115,7 +134,7 @@ export default function ViewModel({ member }: { member: any }) {
                 <div className="col-span-1">
                   <label
                     htmlFor="dateOfBirth"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    className="block mb-2 text-sm font-extrabold text-gray-900 dark:text-white"
                   >
                     Date of Birth
                   </label>
@@ -124,11 +143,11 @@ export default function ViewModel({ member }: { member: any }) {
                 <div className="col-span-1">
                   <label
                     htmlFor="gender"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    className="block mb-2 text-sm font-extrabold text-gray-900 dark:text-white"
                   >
                     Gender
                   </label>
-                  {member.baptism}
+                  {member.gender}
                 </div>
               </div>
             </div>

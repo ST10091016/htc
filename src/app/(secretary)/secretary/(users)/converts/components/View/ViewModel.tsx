@@ -39,7 +39,7 @@ export default function ViewModel({ convert }: { convert: any }) {
             {/* <!-- Modal header --> */}
             <div className="flex items-center justify-between p-4 md:p-5 rounded-t">
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                Member Details
+                Convert Details
               </h3>
               <button
                 onClick={closeModal}
@@ -70,7 +70,7 @@ export default function ViewModel({ convert }: { convert: any }) {
                 <div className="col-span-1">
                   <label
                     htmlFor="firstNam"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    className="block mb-2 text-sm font-extrabold text-gray-900 dark:text-white"
                   >
                     First Name
                   </label>
@@ -79,7 +79,7 @@ export default function ViewModel({ convert }: { convert: any }) {
                 <div className="col-span-1">
                   <label
                     htmlFor="firstNam"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    className="block mb-2 text-sm font-extrabold text-gray-900 dark:text-white"
                   >
                     Last Name
                   </label>
@@ -88,7 +88,7 @@ export default function ViewModel({ convert }: { convert: any }) {
                 <div className="col-span-2">
                   <label
                     htmlFor="email"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    className="block mb-2 text-sm font-extrabold text-gray-900 dark:text-white"
                   >
                     Email
                   </label>
@@ -96,39 +96,53 @@ export default function ViewModel({ convert }: { convert: any }) {
                 </div>
                 <div className="col-span-2">
                   <label
-                    htmlFor="mobile"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    htmlFor="phone"
+                    className="block mb-2 text-sm font-extrabold text-gray-900 dark:text-white"
                   >
-                    Mobile
+                    Phone
                   </label>
                   {convert.phone}
                 </div>
-                <div className="col-span-2">
-                  <label
-                    htmlFor="address"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                  >
-                    Address
-                  </label>
-                  {convert.address} - {convert.postalCode}
-                </div>
-                <div className="col-span-1">
-                  <label
-                    htmlFor="dateOfBirth"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                  >
-                    Date of Birth
-                  </label>
-                  {convert.birthDate}
-                </div>
+               
+            
                 <div className="col-span-1">
                   <label
                     htmlFor="gender"
-                    className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                    className="block mb-2 text-sm font-extrabold text-gray-900 dark:text-white"
                   >
                     Gender
                   </label>
-                  {convert.baptism}
+                  {convert.gender}
+                </div>
+
+                <div className="col-span-1">
+                  <label
+                    htmlFor="status"
+                    className="block mb-2 text-sm font-extrabold text-gray-900 dark:text-white"
+                  >
+                    Status
+                  </label>
+                  {convert.status}
+                </div>
+
+                <div className="col-span-1">
+                  <label
+                    htmlFor="followUp"
+                    className="block mb-2 text-sm font-extrabold text-gray-900 dark:text-white"
+                  >
+                    Follow Up
+                  </label>
+                  {convert.followUp}
+                </div>
+                
+                <div className="col-span-1">
+                  <label
+                    htmlFor="actions"
+                    className="block mb-2 text-sm font-extrabold text-gray-900 dark:text-white"
+                  >
+                   Actions
+                  </label>
+                  {convert.actions}
                 </div>
               </div>
             </div>
