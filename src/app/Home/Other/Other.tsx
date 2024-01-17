@@ -1,8 +1,8 @@
 import React from "react";
 import Image from "next/image";
-import Worship from "public/Images/worship.jpg";
-import Events from "public/Images/events.png";
-import Minister from "public/Images/ministerpic.jpg";
+import Worship from "../../../../public/Images/worship.jpg";
+import Events from "../../../../public/Images/events.png";
+import Minister from "../../../../public/Images/ministerpic.jpg";
 
 const cards = [
   {
