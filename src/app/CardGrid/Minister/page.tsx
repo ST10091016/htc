@@ -1,11 +1,11 @@
 import React from "react";
 import Image from "next/image";
-import Apostle from "public/Images/apostle.jpg";
-import Prophet from "public/Images/prophet.jpg";
-import Evan1 from "public/Images/evangelist.jpg";
-import Evan2 from "public/Images/evangelist2.jpeg";
-import Evan3 from "public/Images/min3.jpg";
-import Pastor from "public/Images/pastor.jpg";
+import Apostle from "../../../../public/Images/apostle.jpg";
+import Prophet from "../../../../public/Images/prophet.jpg";
+import Evan1 from "../../../../public/Images/evangelist.jpg";
+import Evan2 from "../../../../public/Images/evangelist2.jpeg";
+import Evan3 from "../../../../public/Images/min3.jpg";
+import Pastor from "../../../../public/Images/pastor.jpg";
 import Footer from "../../../app/common/Footer/Footer";
 import Header from "../../../app/common/Header/Header";
 
