@@ -1,29 +1,53 @@
-import React from 'react'
+import Link from "next/link";
 
-function Page() {
+export default function page() {
   return (
-    <div>
-      <div className="bg-gray-100 h-screen">
-        <div className="bg-white p-6  md:mx-auto">
-          <svg viewBox="0 0 24 24" className="w-16 h-16 mx-auto my-6">
-            <path fill="currentColor"
-              d="M12,0A12,12,0,1,0,24,12,12.014,12.014,0,0,0,12,0Zm6.927,8.2-6.845,9.289a1.011,1.011,0,0,1-1.43.188L5.764,13.769a1,1,0,1,1,1.25-1.562l4.076,3.261,6.227-8.451A1,1,0,1,1,18.927,8.2Z">
-            </path>
-          </svg>
-          <div className="text-center">
-            <h3 className="md:text-2xl text-base text-gray-900 font-semibold text-center">Payment Done!</h3>
-            <p className="text-gray-600 my-2">Thank you for completing your secure online payment.</p>
-            <p> Have a great day!  </p>
-            <div className="py-10 text-center">
-              <a href="/" className="px-12 bg-green-400 hover:bg-blue-400 text-white font-semibold py-3">
-                GO BACK
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  )
+    <section className="w-full h-screen flex flex-col items-center justify-center gap-8 bg-green-50 dark:bg-green-900">
+      <header className="flex flex-col items-center gap-4">
+        <CheckCircleIcon className="h-24 w-24 text-green-500 dark:text-green-400" />
+        <h1 className="text-4xl font-bold text-green-600 dark:text-green-300">
+          Donation Successful!
+        </h1>
+      </header>
+      <main className="flex flex-col items-center gap-4 px-4 md:px-6">
+        <p className="text-xl text-center text-gray-700 dark:text-gray-300">
+          Thank you for your generous donation! Your contribution will make a
+          significant difference.
+        </p>
+        <p className="text-lg text-center text-gray-600 dark:text-gray-400">
+          We will send a confirmation email with all the details of your
+          donation. If you have any questions, feel free to contact our support
+          team.
+        </p>
+      </main>
+      <footer>
+        <Link
+          className="inline-flex h-10 items-center justify-center rounded-md bg-green-600 px-8 text-sm font-medium text-white shadow transition-colors hover:bg-green-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-green-500 disabled:pointer-events-none disabled:opacity-50 dark:bg-green-300 dark:text-green-900 dark:hover:bg-green-200 dark:focus-visible:ring-green-700"
+          href="#"
+        >
+          Return to Homepage
+        </Link>
+      </footer>
+    </section>
+  );
 }
 
-export default Page
+function CheckCircleIcon(props: any) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+      <polyline points="22 4 12 14.01 9 11.01" />
+    </svg>
+  );
+}

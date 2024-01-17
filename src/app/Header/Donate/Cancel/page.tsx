@@ -1,28 +1,49 @@
-import React from 'react'
+import Link from "next/link";
 
-function Page() {
+export default function page() {
   return (
-    <div>
-      <div className="bg-gray-100 h-screen">
-        <div className="bg-white p-6  md:mx-auto">
-          <svg viewBox="0 0 24 24" className="w-16 h-16 mx-auto my-6">
-            <path fill="currentColor"
-              d="M12,0A12,12,0,1,0,24,12,12.014,12.014,0,0,0,12,0Zm6.927,8.2-6.845,9.289a1.011,1.011,0,0,1-1.43.188L5.764,13.769a1,1,0,1,1,1.25-1.562l4.076,3.261,6.227-8.451A1,1,0,1,1,18.927,8.2Z">
-            </path>
-          </svg>
-          <div className="text-center">
-            <h3 className="md:text-2xl text-base text-gray-900 font-semibold text-center">Payment Cancelled!</h3>
-            <p className="text-gray-600 my-2">Your payment has been cancelled.</p>
-            <div className="py-10 text-center">
-              <a href="/" className="px-12 bg-red-400 hover:bg-blue-400 text-white font-semibold py-3">
-                GO BACK
-              </a>
-            </div>
-          </div>
+    <main className="flex flex-col items-center justify-center min-h-screen px-4 py-12 bg-gray-50 sm:px-6 lg:px-8 dark:bg-gray-900">
+      <div className="max-w-md w-full space-y-8">
+        <div>
+          <XCircleIcon className="mx-auto h-12 w-auto text-red-500" />
+          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900 dark:text-gray-100">
+            Payment Canceled
+          </h2>
+          <p className="mt-2 text-center text-sm text-gray-600 dark:text-gray-400">
+            Your payment has been canceled. If you have any questions or
+            concerns, please contact our support team.
+          </p>
+        </div>
+        <div className="mt-5">
+          <Link
+            className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-black hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+            href="#"
+          >
+            Return to Homepage
+          </Link>
         </div>
       </div>
-    </div>
-  )
+    </main>
+  );
 }
 
-export default Page
+function XCircleIcon(props:any) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <circle cx="12" cy="12" r="10" />
+      <path d="m15 9-6 6" />
+      <path d="m9 9 6 6" />
+    </svg>
+  );
+}
