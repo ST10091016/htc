@@ -23,7 +23,7 @@ export default function DeleteVideoModel({ videoId }: { videoId: string }) {
           <div className="relative bg-white rounded-lg shadow dark:bg-gray-800">
             <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-800">
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-                Delete Convert
+                Delete Video
               </h3>
               <button
                 onClick={() => setModalOpen(false)}
@@ -50,7 +50,7 @@ export default function DeleteVideoModel({ videoId }: { videoId: string }) {
             </div>
             <div className="bg-white rounded-lg p-6 w-180 dark:bg-gray-800">
               <h3 className="text-lg font-semibold mb-4">
-                Are you sure you want to Delete this convert?
+                Are you sure you want to delete this video?
               </h3>
               <div className="flex justify-center">
                 <form
