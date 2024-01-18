@@ -2,10 +2,10 @@
 
 import { useState } from "react";
 import toast from "react-hot-toast";
-import { DeleteNews } from "@/app/(secretary)/secretary/(users)/_actions/news";
+import { DeleteEvent } from "@/app/(secretary)/secretary/(users)/_actions/events";
 import DeleteButton from "@/app/(secretary)/secretary/(users)/_components/DeleteButton";
 
-export default function DeleteNewsModel({ newsId }: { newsId: string }) {
+export default function DeleteEventModel({ eventId }: { eventId: string }) {
   const [isModalOpen, setModalOpen] = useState(false);
 
   return (
@@ -55,9 +55,9 @@ export default function DeleteNewsModel({ newsId }: { newsId: string }) {
               <div className="flex justify-center">
                 <form
                   action={async () => {
-                    const result = await DeleteNews(newsId).then((result) => {
+                    const result = await DeleteEvent(eventId).then((result) => {
                       if (result === null) {
-                        throw new Error("News is null");
+                        throw new Error("Event is null");
                       }
                       setModalOpen(false);
                       return result;
@@ -65,7 +65,7 @@ export default function DeleteNewsModel({ newsId }: { newsId: string }) {
                     if (result?.error) {
                       toast.error(result?.error as string);
                     } else {
-                      toast.success("News Deleted");
+                      toast.success("Event Deleted");
                     }
                   }}
                 >

@@ -2,12 +2,14 @@
 
 import React, { useState, useRef } from "react";
 import toast from "react-hot-toast";
-import AddButton from "../(users)/_components/AddButton";
-import { addNews } from "../(users)/_actions/news";
+import UpdateButton from "../(users)/_components/UpdateButton";
+import { UpdateNews } from "../(users)/_actions/news";
 
-export default function AddEvent() {
+export default function UpdateNew({ newsId, newsDetails }: { newsId: string, newsDetails : any}) {
   const [isModalOpen, setIsModalOpen] = useState(false);
-
+  const [title, setTitle] = useState(newsDetails.title)
+  const [date, setDate] = useState(newsDetails.date)
+  const [content, setContent] = useState(newsDetails.content)
   
   const openModal = () => {
     setIsModalOpen(true);
@@ -25,7 +27,7 @@ export default function AddEvent() {
         type="button"
         className="block text-white bg-blue-700 shadow-lg hover:shadow-xl font-medium rounded-lg text-sm px-2 py-2 text-center transition duration-300 ease-in-out"
       >
-        Add News
+        Update 
       </button>
 
       {/* <!-- Main modal --> */}
@@ -72,7 +74,7 @@ export default function AddEvent() {
             <div className="p-6">
               <form
                 action={async (formData: any) => {
-                  const result = await addNews(formData).then((result) => {
+                  const result = await UpdateNews(formData, newsId).then((result) => {
                     if (result === null) {
                       throw new Error("Project is null");
                     }
@@ -84,7 +86,7 @@ export default function AddEvent() {
                     toast.error(result?.error as string);
                   } else {
                     closeModal();
-                    toast.success("News Added Successfully");
+                    toast.success("News Updated Successfully");
                   }
                 }}
               >
@@ -100,6 +102,8 @@ export default function AddEvent() {
                       type="text"
                       name="title"
                       id="title"
+                      value={title}
+                      onChange={(e) => setTitle(e.target.value)}
                       className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                       placeholder="Title"
                       required
@@ -116,6 +120,8 @@ export default function AddEvent() {
                       type="date"
                       name="date"
                       id="date"
+                      value={date}
+                      onChange={(e) => setDate(e.target.value)}
                       className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
                       placeholder="Date"
                       required
@@ -123,7 +129,7 @@ export default function AddEvent() {
                   </div>
                   <div className="col-span-2">
                     <label
-                      htmlFor="ontent"
+                      htmlFor="content"
                       className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
                     >
                       Content
@@ -132,13 +138,15 @@ export default function AddEvent() {
                       rows={5}
                       name="content"
                       id="content"
+                      value={content}
+                      onChange={(e) => setContent(e.target.value)}
                       className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                      placeholder="content"
+                      placeholder="Content"
                     />
                   </div>
                 </div>
                 <div className="flex justify-between">
-                  <AddButton />
+                  <UpdateButton />
                 </div>
               </form>
             </div>

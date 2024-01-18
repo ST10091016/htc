@@ -1,5 +1,6 @@
 import React from 'react'
 import AddEvent from './AddEvent';
+import EventCard from './EventCard';
 import Link from "next/link";
 
 export default function page() {
@@ -8,7 +9,7 @@ export default function page() {
       <div className="flex py-5 justify-end">
         <AddEvent />
       </div>
-      {/* <ConvertCard /> */}
+      <EventCard />
     </>
   )
 }

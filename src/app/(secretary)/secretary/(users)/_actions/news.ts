@@ -23,6 +23,32 @@ export const addNews = async (formData: FormData) => {
   }
 };
 
+//Update
+export async function UpdateNews(
+  formData: FormData,
+  Id: string
+  // date: any
+) {
+  try {
+    await prisma.news
+      .update({
+        where: { id: Id },
+        data: {
+          title: formData.get("title") as string,
+          date: new Date(formData.get("date") as string),
+          content: formData.get("content") as string,
+        },
+      })
+      .finally(() => {
+        prisma.$disconnect(), revalidatePath(`/`);
+      });
+  } catch (error) {
+    return {
+      error: "Something went wrong, try again",
+    };
+  }
+}
+
 //DeleteNews
 export async function DeleteNews(Id: string) {
   try {
