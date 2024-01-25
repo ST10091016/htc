@@ -5,7 +5,9 @@ import React, { useState } from 'react'
 export default function convertTable({ converts }: { converts: any }) {
     const [userData, setUserData] = useState(converts);
     const [search, setSearchTerm] = useState("");
+    const [loader, setLoader] = useState(false);
     const [order, setOrder] = useState("ASC");
+
     const sorting = (col: any) => {
         if (order === "ASC") {
             const sorted = [...userData].sort((a: any, b: any) =>
@@ -22,6 +24,70 @@ export default function convertTable({ converts }: { converts: any }) {
             setOrder("ASC");
         }
     };
+
+    // const downloadPDF = () => {
+    //     setLoader(true);
+
+    //     const pdf = new jsPDF("l", "pt", "a4");
+    //     const options = {
+    //         margin: { top: 40, right: 30, bottom: 10, left: 30 },
+    //         beforePageContent: function (data) {
+    //             pdf.text("Converts", 40, 30);
+    //         },
+    //     };
+
+    //     const columns = [];
+    //     const rows = [];
+
+    //     // Check if tableRef.current is not null before querying
+    //     if (tableRef.current) {
+    //         // Extract column headers
+    //         const allColumns = tableRef.current.querySelectorAll('thead th');
+    //         allColumns.forEach((th, index) => {
+    //             // Exclude the last column
+    //             if (index < allColumns.length - 1) {
+    //                 columns.push({ header: th.innerText, dataKey: th.getAttribute('data-field') });
+    //             }
+    //         });
+
+    //         // Extract data rows
+    //         tableRef.current.querySelectorAll('tbody tr').forEach((tr) => {
+    //             const row = [];
+    //             tr.querySelectorAll('td').forEach((td, index) => {
+    //                 // Exclude the last column
+    //                 if (index < allColumns.length - 1) {
+    //                     row.push(td.innerText);
+    //                 }
+    //             });
+    //             rows.push(row);
+    //         });
+
+    //         try {
+    //             pdf.autoTable({
+    //                 columns,
+    //                 body: rows,
+    //                 startY: 70,
+    //                 theme: 'grid',
+    //                 styles: { overflow: 'linebreak' },
+    //                 columnStyles: {
+    //                     0: { overflow: 'linebreak' },
+    //                     1: { overflow: 'linebreak' },
+    //                     // Add more column styles if needed
+    //                 },
+    //                 ...options,
+    //             });
+    //         } catch (error) {
+    //             console.error("Error during autoTable:", error);
+    //         }
+
+    //         setLoader(false);
+    //         pdf.save("Convert.pdf");
+    //     } else {
+    //         console.error("Table element not found");
+    //         setLoader(false);
+    //     }
+    // };
+
     return (
         <>
 
@@ -171,6 +237,14 @@ export default function convertTable({ converts }: { converts: any }) {
                                 ))}
                         </tbody>
                     </table>
+                    <button
+                        type="button"
+                        onClick={downloadPDF}
+                        disabled={!(loader === false)}
+                        className="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center ml-6"
+                    >
+                        {loader ? <span>Downloading</span> : <span>Download PDF</span>}
+                    </button>
                 </div>
             </div>
 
