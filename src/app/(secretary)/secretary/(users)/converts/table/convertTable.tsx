@@ -8,7 +8,7 @@ export default function ConvertTable({ converts }: { converts: any }) {
     const [userData, setUserData] = useState(converts);
     const [search, setSearchTerm] = useState("");
     const [order, setOrder] = useState("ASC");
-    const tableRef = useRef(null);
+    const tableRef: any = useRef(null);
     const sorting = (col: any) => {
         if (order === "ASC") {
             const sorted = [...userData].sort((a: any, b: any) =>
@@ -31,10 +31,10 @@ export default function ConvertTable({ converts }: { converts: any }) {
     const downloadPDF = () => {
         setLoader(true);
 
-        const pdf = new jsPDF("l", "pt", "a4");
+        const pdf:any = new jsPDF("l", "pt", "a4");
         const options = {
             margin: { top: 40, right: 30, bottom: 10, left: 30 },
-            beforePageContent: function (data) {
+            beforePageContent: function (data: any[]) {
                 pdf.text("Converts", 40, 30);
             },
         };
@@ -46,21 +46,15 @@ export default function ConvertTable({ converts }: { converts: any }) {
         if (tableRef.current) {
             // Extract column headers
             const allColumns = tableRef.current.querySelectorAll('thead th');
-            allColumns.forEach((th, index) => {
-                // Exclude the last column
-                if (index < allColumns.length - 1) {
-                    columns.push({ header: th.innerText, dataKey: th.getAttribute('data-field') });
-                }
+            allColumns.forEach((th: any) => {
+                columns.push({ header: th.innerText, dataKey: th.getAttribute('data-field') });
             });
 
-            // Extract data rows
-            tableRef.current.querySelectorAll('tbody tr').forEach((tr) => {
-                const row = [];
-                tr.querySelectorAll('td').forEach((td, index) => {
-                    // Exclude the last column
-                    if (index < allColumns.length - 1) {
-                        row.push(td.innerText);
-                    }
+            // Extract data rows:any
+            tableRef.current.querySelectorAll('tbody tr').forEach((tr:any) => {
+                const row: any[] = [];
+                tr.querySelectorAll('td').forEach((td: any) => {
+                    row.push(td.innerText);
                 });
                 rows.push(row);
             });
@@ -119,7 +113,7 @@ export default function ConvertTable({ converts }: { converts: any }) {
                 <br />
                 <div className="convert relative overflow-x-auto shadow-md sm:rounded-lg">
                     <h1 className="text-xl font-bold text-center py-4">Converts</h1>
-                    <table className="convert w-full text-sm text-left text-gray-600 dark:text-gray-400">
+                    <table ref={tableRef} className="convert w-full text-sm text-left text-gray-600 dark:text-gray-400">
                         <thead className="text-xs uppercase bg-blue-400 dark:bg-gray-700 text-white">
                             <tr>
                                 <th
@@ -172,10 +166,7 @@ export default function ConvertTable({ converts }: { converts: any }) {
                                     Status ↑↓
                                 </th>
                                 <th scope="col" className="px-6 py-3">
-                                    Follow Up Person
-                                </th>
-                                <th scope="col" className="px-6 py-3">
-                                    Convert Actions
+                                    Follow Up Person ↑↓
                                 </th>
                             </tr>
                         </thead>
@@ -183,22 +174,11 @@ export default function ConvertTable({ converts }: { converts: any }) {
                             {converts
                                 .filter(
                                     (convert: any) =>
-                                        convert.firstName
-                                            .toLowerCase()
-                                            .includes(search.toLowerCase()) ||
-                                        convert.lastName
-                                            .toLowerCase()
-                                            .includes(search.toLowerCase()) ||
-                                        convert.email
-                                            .toLowerCase()
-                                            .includes(search.toLowerCase()) ||
-                                        convert.phone
-                                            .toLowerCase()
-                                            .includes(search.toLowerCase()) ||
-                                        convert.gender
-                                            .toLowerCase()
-                                            .includes(search.toLowerCase()) ||
-                                        []
+                                        convert.firstName.toLowerCase().includes(search.toLowerCase()) ||
+                                        convert.lastName.toLowerCase().includes(search.toLowerCase()) ||
+                                        convert.email.toLowerCase().includes(search.toLowerCase()) ||
+                                        convert.phone.toLowerCase().includes(search.toLowerCase()) ||
+                                        convert.gender.toLowerCase().includes(search.toLowerCase())
                                 )
                                 .map((convert: any) => (
                                     <tr
@@ -229,9 +209,7 @@ export default function ConvertTable({ converts }: { converts: any }) {
                                         <td className="border border-gray-200 px-6 py-4">
                                             {convert.followUp}
                                         </td>
-                                        <td className="border border-gray-200 px-6 py-4">
-                                            {convert.actions}
-                                        </td>
+                                     
                                     </tr>
                                 ))}
                         </tbody>
