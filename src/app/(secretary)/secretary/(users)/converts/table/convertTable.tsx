@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 
-export default function convertTable({ converts }: { converts: any }) {
+export default function ConvertTable({ converts }: { converts: any }) {
     const [userData, setUserData] = useState(converts);
     const [search, setSearchTerm] = useState("");
     const [order, setOrder] = useState("ASC");
@@ -24,32 +24,29 @@ export default function convertTable({ converts }: { converts: any }) {
     };
     return (
         <>
-
             {/* Display convert data in a table */}
             <div className="relative overflow-x-auto py-10 justify-center">
-                {/* <Container className=" py-8 flex flex-col items-center">
-                  <Form>
-                      <div className="flex items-center justify-between mb-3 px-6">
-                          <InputGroup>
-                              <Form.Control
-                                  onChange={(e:any) => setSearchTerm(e.target.value)}
-                                  className="px-6 block py-3"
-                                  placeholder="Search"
-                              />
-                          </InputGroup>
-                          <button
+                <div className=" py-8 flex flex-col items-center">
+                    <form>
+                        <div className="flex items-center justify-between mb-3 px-6">
+                            <div>
+                                <input
+                                    onChange={(e: any) => setSearchTerm(e.target.value)}
+                                    className="px-6 block py-3"
+                                    placeholder="Search"
+                                />
+                            </div>
+                            {/* <button
                               type="button"
                               onClick={download PDF}
                               disabled={!(loader === false)}
                               className="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center ml-6"
                           >
                               {loader ? <span>Downloading</span> : <span>Download PDF</span>}
-                          </button>
-                      </div>
-                      
-
-                  </Form>
-              </Container> */}
+                          </button> */}
+                        </div>
+                    </form>
+                </div>
                 <br />
                 <div className="convert relative overflow-x-auto shadow-md sm:rounded-lg">
                     <h1 className="text-xl font-bold text-center py-4">Converts</h1>
@@ -115,26 +112,25 @@ export default function convertTable({ converts }: { converts: any }) {
                         </thead>
                         <tbody>
                             {converts
-                                //   .filter(
-                                //       (convert: any) =>
-                                //           convert.firstName
-                                //               .toLowerCase()
-                                //               .includes(search.toLowerCase()) ||
-                                //           convert.gender.toLowerCase().includes(search.toLowerCase()) ||[]
-                                //           convert.lastName
-                                //               .toLowerCase()
-                                //               .includes(search.toLowerCase()) ||
-                                //           convert.worshipCenter
-                                //               .toLowerCase()
-                                //               .includes(search.toLowerCase()) ||
-                                //           convert.email.toLowerCase().includes(search.toLowerCase()) ||
-                                //           convert.phone.toLowerCase().includes(search.toLowerCase()) ||
-                                //           convert.status.toLowerCase().includes(search.toLowerCase()) ||
-                                //           convert.followUp
-                                //               .toLowerCase()
-                                //               .includes(search.toLowerCase()) ||
-                                //           convert.actions.toLowerCase().includes(search.toLowerCase())
-                                //   )
+                                .filter(
+                                    (convert: any) =>
+                                        convert.firstName
+                                            .toLowerCase()
+                                            .includes(search.toLowerCase()) ||
+                                        convert.lastName
+                                            .toLowerCase()
+                                            .includes(search.toLowerCase()) ||
+                                        convert.email
+                                            .toLowerCase()
+                                            .includes(search.toLowerCase()) ||
+                                        convert.phone
+                                            .toLowerCase()
+                                            .includes(search.toLowerCase()) ||
+                                        convert.gender
+                                            .toLowerCase()
+                                            .includes(search.toLowerCase()) ||
+                                        []
+                                )
                                 .map((convert: any) => (
                                     <tr
                                         className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
@@ -173,7 +169,6 @@ export default function convertTable({ converts }: { converts: any }) {
                     </table>
                 </div>
             </div>
-
         </>
-    )
+    );
 }
