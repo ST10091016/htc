@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import jsPDF from "jspdf";
 import 'jspdf-autotable';
 
@@ -8,6 +8,7 @@ export default function ConvertTable({ converts }: { converts: any }) {
     const [userData, setUserData] = useState(converts);
     const [search, setSearchTerm] = useState("");
     const [order, setOrder] = useState("ASC");
+    const tableRef = useRef(null);
     const sorting = (col: any) => {
         if (order === "ASC") {
             const sorted = [...userData].sort((a: any, b: any) =>
@@ -38,8 +39,8 @@ export default function ConvertTable({ converts }: { converts: any }) {
             },
         };
 
-        const columns = [];
-        const rows = [];
+        const columns: any[] = [];
+        const rows: any[] = [];
 
         // Check if tableRef.current is not null before querying
         if (tableRef.current) {
@@ -106,7 +107,7 @@ export default function ConvertTable({ converts }: { converts: any }) {
                             </div>
                             <button
                               type="button"
-                              onClick={download PDF}
+                              onClick={downloadPDF}
                               disabled={!(loader === false)}
                               className="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center ml-6"
                           >
