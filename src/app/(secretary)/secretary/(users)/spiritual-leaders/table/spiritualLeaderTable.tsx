@@ -4,12 +4,12 @@ import React, { useState, useRef } from "react";
 import jsPDF from "jspdf";
 import 'jspdf-autotable';
 
-export default function ConvertTable({ converts }: { converts: any }) {
-    const [userData, setUserData] = useState(converts);
+export default function SpiritualLeaderTable({ spiritualLeader }: { spiritualLeader: any }) {
+    const [userData, setUserData] = useState(spiritualLeader);
     const [search, setSearchTerm] = useState("");
     const [order, setOrder] = useState("ASC");
     const tableRef: any = useRef(null);
-    
+
     const sorting = (col: any) => {
         const sortOrder = order === "ASC" ? 1 : -1;
 
@@ -37,11 +37,11 @@ export default function ConvertTable({ converts }: { converts: any }) {
     const downloadPDF = () => {
         setLoader(true);
 
-        const pdf:any = new jsPDF("l", "pt", "a4");
+        const pdf: any = new jsPDF("l", "pt", "a4");
         const options = {
             margin: { top: 40, right: 30, bottom: 10, left: 30 },
             beforePageContent: function (data: any[]) {
-                pdf.text("Converts", 40, 30);
+                pdf.text("Spiritual Leaders", 40, 30);
             },
         };
 
@@ -57,7 +57,7 @@ export default function ConvertTable({ converts }: { converts: any }) {
             });
 
             // Extract data rows:any
-            tableRef.current.querySelectorAll('tbody tr').forEach((tr:any) => {
+            tableRef.current.querySelectorAll('tbody tr').forEach((tr: any) => {
                 const row: any[] = [];
                 tr.querySelectorAll('td').forEach((td: any) => {
                     row.push(td.innerText);
@@ -84,7 +84,7 @@ export default function ConvertTable({ converts }: { converts: any }) {
             }
 
             setLoader(false);
-            pdf.save("Convert.pdf");
+            pdf.save("Spiritual Leader.pdf");
         } else {
             console.error("Table element not found");
             setLoader(false);
@@ -106,19 +106,19 @@ export default function ConvertTable({ converts }: { converts: any }) {
                                 />
                             </div>
                             <button
-                              type="button"
-                              onClick={downloadPDF}
-                              disabled={!(loader === false)}
-                              className="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center ml-6"
-                          >
-                              {loader ? <span>Downloading</span> : <span>Download PDF</span>}
-                          </button>
+                                type="button"
+                                onClick={downloadPDF}
+                                disabled={!(loader === false)}
+                                className="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center ml-6"
+                            >
+                                {loader ? <span>Downloading</span> : <span>Download PDF</span>}
+                            </button>
                         </div>
                     </form>
                 </div>
                 <br />
                 <div className="convert relative overflow-x-auto shadow-md sm:rounded-lg">
-                    <h1 className="text-xl font-bold text-center py-4">Converts</h1>
+                    <h1 className="text-xl font-bold text-center py-4">Spiritual Leaders</h1>
                     <table ref={tableRef} className="convert w-full text-sm text-left text-gray-600 dark:text-gray-400">
                         <thead className="text-xs uppercase bg-blue-400 dark:bg-gray-700 text-white">
                             <tr>
@@ -167,56 +167,49 @@ export default function ConvertTable({ converts }: { converts: any }) {
                                 <th
                                     scope="col"
                                     className="px-6 py-3"
-                                    onClick={() => sorting("status")}
+                                    onClick={() => sorting("role")}
                                 >
-                                    Status ↑↓
-                                </th>
-                                <th scope="col" className="px-6 py-3">
-                                    Follow Up Person ↑↓
+                                    Role ↑↓
                                 </th>
                             </tr>
                         </thead>
                         <tbody>
-                            {converts
+                            {spiritualLeader
                                 .filter(
-                                    (convert: any) =>
-                                        convert.firstName.toLowerCase().includes(search.toLowerCase()) ||
-                                        convert.lastName.toLowerCase().includes(search.toLowerCase()) ||
-                                        convert.email.toLowerCase().includes(search.toLowerCase()) ||
-                                        convert.phone.toLowerCase().includes(search.toLowerCase()) ||
-                                        convert.center.toLowerCase().includes(search.toLowerCase()) ||
-                                        convert.gender.toLowerCase().includes(search.toLowerCase())
+                                    (spiritualLeader: any) =>
+                                        spiritualLeader.firstName.toLowerCase().includes(search.toLowerCase()) ||
+                                        spiritualLeader.lastName.toLowerCase().includes(search.toLowerCase()) ||
+                                        spiritualLeader.email.toLowerCase().includes(search.toLowerCase()) ||
+                                        spiritualLeader.phone.toLowerCase().includes(search.toLowerCase()) ||
+                                        spiritualLeader.gender.toLowerCase().includes(search.toLowerCase())
                                 )
-                                .map((convert: any) => (
+                                .map((spiritualLeader: any) => (
                                     <tr
                                         className="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
-                                        key={convert.id}
+                                        key={spiritualLeader.id}
                                     >
                                         <td className="border border-gray-200 px-6 py-4">
-                                            {convert.firstName}
+                                            {spiritualLeader.firstName}
                                         </td>
                                         <td className="border border-gray-200 px-6 py-4">
-                                            {convert.lastName}
+                                            {spiritualLeader.lastName}
                                         </td>
                                         <td className="border border-gray-200 px-6 py-4">
-                                            {convert.center}
+                                            {spiritualLeader.center}
                                         </td>
                                         <td className="border border-gray-200 px-6 py-4">
-                                            {convert.phone}
+                                            {spiritualLeader.phone}
                                         </td>
                                         <td className="border border-gray-200 px-6 py-4">
-                                            {convert.email}
+                                            {spiritualLeader.email}
                                         </td>
                                         <td className="border border-gray-200 px-6 py-4">
-                                            {convert.gender}
+                                            {spiritualLeader.gender}
                                         </td>
                                         <td className="border border-gray-200 px-6 py-4">
-                                            {convert.status}
+                                            {spiritualLeader.role}
                                         </td>
-                                        <td className="border border-gray-200 px-6 py-4">
-                                            {convert.followUp}
-                                        </td>
-                                     
+
                                     </tr>
                                 ))}
                         </tbody>
