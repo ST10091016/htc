@@ -81,12 +81,12 @@ function Page() {
                   <input
                     type="hidden"
                     name="merchant_id"
-                    value="19324088"
+                    value={`${process.env.NEXT_PUBLIC_MERCHANT_ID}`}
                   />
                   <input
                     type="hidden"
                     name="merchant_key"
-                    value="8c1heh2ogggng"
+                    value={`${process.env.NEXT_PUBLIC_MERCHANT}`}
                   />
 
                   <div>
