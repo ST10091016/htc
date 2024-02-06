@@ -66,12 +66,12 @@ function Page() {
                   <input
                     type="hidden"
                     name="return_url"
-                    value={`${process.env.NEXT_PUBLIC_URL}/Header/Donate/success`}
+                    value={`${process.env.NEXT_PUBLIC_URL}/Header/Donate/Success`}
                   />
                   <input
                     type="hidden"
                     name="cancel_url"
-                    value={`${process.env.NEXT_PUBLIC_URL}/Header/Donate/cancel`}
+                    value={`${process.env.NEXT_PUBLIC_URL}/Header/Donate/Cancel`}
                   />
                   <input
                     type="hidden"
