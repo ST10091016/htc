@@ -131,63 +131,63 @@ export default function CenterMemberTable({
                   className="px-6 py-3"
                   onClick={() => sorting("title")}
                 >
-                  Title ↑↓
+                  Title
                 </th>
                 <th
                   scope="col"
                   className="px-6 py-3"
                   onClick={() => sorting("firstName")}
                 >
-                  Name ↑↓
+                  Name
                 </th>
                 <th
                   scope="col"
                   className="px-6 py-3"
                   onClick={() => sorting("lastName")}
                 >
-                  Surname ↑↓
+                  Surname
                 </th>
                 <th
                   scope="col"
                   className="px-6 py-3"
                   onClick={() => sorting("worshipCenter")}
                 >
-                  Worship Center ↑↓
+                  Worship Center
                 </th>
                 <th
                   scope="col"
                   className="px-6 py-3"
                   onClick={() => sorting("phone")}
                 >
-                  Phone Number ↑↓
+                  Phone Number
                 </th>
                 <th
                   scope="col"
                   className="px-6 py-3"
                   onClick={() => sorting("email")}
                 >
-                  Email ↑↓
+                  Email
                 </th>
                 <th
                   scope="col"
                   className="px-6 py-3"
                   onClick={() => sorting("gender")}
                 >
-                  Gender ↑↓
+                  Gender
                 </th>
                 <th
                   scope="col"
                   className="px-6 py-3"
                   onClick={() => sorting("baptism")}
                 >
-                  Baptism ↑↓
+                  Baptism
                 </th>
                 <th
                   scope="col"
                   className="px-6 py-3"
                   onClick={() => sorting("birthDate")}
                 >
-                  DOB ↑↓
+                  DOB
                 </th>
               </tr>
             </thead>
