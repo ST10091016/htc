@@ -4,7 +4,7 @@ import React, { useState, useRef } from "react";
 import jsPDF from "jspdf";
 import "jspdf-autotable";
 
-export default function ConvertTable({ converts }: { converts: any }) {
+export default function ConvertTable({ converts, centers }: { converts: any, centers: any }) {
   const [userData, setUserData] = useState(converts);
   const [search, setSearchTerm] = useState("");
   const [order, setOrder] = useState("ASC");
@@ -213,7 +213,7 @@ export default function ConvertTable({ converts }: { converts: any }) {
                       {convert.lastName}
                     </td>
                     <td className="border border-gray-200 px-6 py-4">
-                      {convert.center}
+                      {centers.find((center: any) => center.id === convert.centerId)?.name}
                     </td>
                     <td className="border border-gray-200 px-6 py-4">
                       {convert.phone}
