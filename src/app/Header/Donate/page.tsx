@@ -20,7 +20,7 @@ function Page() {
                 </p>
                 <form
                   method="post"
-                  action="https://www.payfast.co.za/eng/process"
+                  action="https://sandbox.payfast.co.za​/eng/process"
                   className="space-y-4 md:space-y-6"
                 >
                   <div>
