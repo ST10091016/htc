@@ -81,7 +81,7 @@ function Page() {
                   <input
                     type="hidden"
                     name="merchant_id"
-                    value={process.env.NEXT_PUBLIC_MERCHANT_ID}
+                    value={process.env.NEXT_PUBLIC_MERCHAN}
                   />
                   <input
                     type="hidden"
