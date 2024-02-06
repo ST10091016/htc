@@ -6,8 +6,10 @@ import "jspdf-autotable";
 
 export default function SpiritualLeaderTable({
   spiritualLeader,
+  centers
 }: {
-  spiritualLeader: any;
+  spiritualLeader: any,
+  centers: any
 }) {
   const [userData, setUserData] = useState(spiritualLeader);
   const [search, setSearchTerm] = useState("");
@@ -215,7 +217,7 @@ export default function SpiritualLeaderTable({
                       {spiritualLeader.lastName}
                     </td>
                     <td className="border border-gray-200 px-6 py-4">
-                      {spiritualLeader.center}
+                      {centers.find((center: any) => center.id === spiritualLeader.centerId)?.name}
                     </td>
                     <td className="border border-gray-200 px-6 py-4">
                       {spiritualLeader.phone}

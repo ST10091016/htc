@@ -6,8 +6,10 @@ import "jspdf-autotable";
 
 export default function CenterMemberTable({
   centerMember,
+  centers
 }: {
-  centerMember: any;
+  centerMember: any,
+  centers: any
 }) {
   const [userData, setUserData] = useState(centerMember);
   const [search, setSearchTerm] = useState("");
@@ -238,7 +240,11 @@ export default function CenterMemberTable({
                       {centerMember.lastName}
                     </td>
                     <td className="border border-gray-200 px-6 py-4">
-                      {centerMember.worshipCenter}
+                      {
+                        centers.find(
+                          (center: any) => center.id === centerMember.centerId
+                        )?.name
+                      }
                     </td>
                     <td className="border border-gray-200 px-6 py-4">
                       {centerMember.phone}
