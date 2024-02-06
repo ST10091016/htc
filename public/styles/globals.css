@@ -170,11 +170,11 @@ html {
 
     .chat-button {
       position: fixed;
-      bottom: 65px;
-      right: 20px;
+      bottom: 15px;
+      right: 15px;
       width: 45px;
       height: 45px;
-      background-color: #25D366;
+      background-color: #3b82f6;
       border-radius: 50%;
       display: flex;
       justify-content: center;

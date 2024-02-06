@@ -5,7 +5,6 @@ import React from "react";
 export default function chatBtn() {
   const handleClick = () => {
     // Open WhatsApp link
-    window.open("https://wa.me/27665366679", "_blank");
   };
 
   return (
@@ -15,7 +14,7 @@ export default function chatBtn() {
         fill="none"
         viewBox="0 0 24 24"
         stroke-width="1.5"
-        stroke="currentColor"
+        stroke="#fff"
         className="w-6 h-6"
       >
         <path
