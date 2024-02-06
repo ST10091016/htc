@@ -66,27 +66,27 @@ function Page() {
                   <input
                     type="hidden"
                     name="return_url"
-                    value={`${process.env.NEXT_URL}/success`}
+                    value={`${process.env.NEXT_PUBLIC_URL}/success`}
                   />
                   <input
                     type="hidden"
                     name="cancel_url"
-                    value={`${process.env.NEXT_URL}/cancel`}
+                    value={`${process.env.NEXT_PUBLIC_URL}/cancel`}
                   />
                   <input
                     type="hidden"
                     name="notify_url"
-                    value={`${process.env.NEXT_UR}/notify`}
+                    value={`${process.env.NEXT_PUBLIC_URL}/notify`}
                   />
                   <input
                     type="hidden"
                     name="merchant_id"
-                    value={process.env.MERCHANT_ID}
+                    value={process.env.NEXT_PUBLIC_MERCHANT_ID}
                   />
                   <input
                     type="hidden"
                     name="merchant_key"
-                    value={process.env.MERCHANT_KEY}
+                    value={process.env.NEXT_PUBLIC_MERCHANT_KEY}
                   />
 
                   <div>
