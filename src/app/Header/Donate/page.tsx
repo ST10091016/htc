@@ -76,7 +76,7 @@ function Page() {
                   <input
                     type="hidden"
                     name="notify_url"
-                    value={`${process.env.NEXT_PUBLIC_URL}/Header/Donate/notify`}
+                    value={`${process.env.NEXT_PUBLIC_URL}/Header/Donate/Notify`}
                   />
                   <input
                     type="hidden"
