@@ -13,8 +13,8 @@ export default function Home() {
     message: "",
   });
 
-  const handleSubmit = async () => {
-
+  const handleSubmit = async (e:any) => {
+e.preventDefault();
     try {
       //api for the email, so that it sends to the person receiving the email
       const response = await fetch("/api/send-message", {
@@ -35,7 +35,7 @@ export default function Home() {
         console.error("Error submitting form:", data.error);
       }
     } catch (error) {
-      console.error("Error submitting form:", error);
+      console.error("Error submitting form:");
     }
   };
 
