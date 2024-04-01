@@ -37,7 +37,7 @@ export default function Page() {
     });
   };
 
-  if (session){
+  if (session) {
     router.push('/')
   }
 
@@ -66,15 +66,6 @@ export default function Page() {
                   required
                 >
                   <option className="bg-gray-800 text-white" value=""></option>
-                  <option
-                    className="bg-gray-800 text-white"
-                    value="centerMember"
-                  >
-                    Center Member
-                  </option>
-                  <option className="bg-gray-800 text-white" value="convert">
-                    Convert
-                  </option>
                   <option className="bg-gray-800 text-white" value="secretary">
                     Secretary
                   </option>
@@ -115,14 +106,13 @@ export default function Page() {
                   placeholder="••••••••"
                   className="placeholder-white bg-gray-50 bg-opacity-50 text-white text-sm rounded-lg block w-full p-2"
                   required
-                  
+
                 />
               </div>
               <button
                 onClick={loginUser}
-                className={`${
-                  isLoading ? "cursor-not-allowed" : ""
-                } w-full text-white bg-gradient-to-r from-green-700 via-green-800 to-green-950 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-lg text-sm px-5 py-3 text-center`}
+                className={`${isLoading ? "cursor-not-allowed" : ""
+                  } w-full text-white bg-gradient-to-r from-green-700 via-green-800 to-green-950 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-green-300 dark:focus:ring-green-800 shadow-lg shadow-green-500/50 dark:shadow-lg dark:shadow-green-800/80 font-medium rounded-lg text-sm px-5 py-3 text-center`}
               >
                 {isLoading ? (
                   <div role="status">
@@ -149,7 +139,7 @@ export default function Page() {
                 )}
               </button>
               <div className="text-sm font-medium text-gray-200">
-               
+
                 <a href="/" className="text-white hover:underline">
                   Back Home
                 </a>

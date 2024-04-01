@@ -5,16 +5,15 @@ import prisma from '@/lib/prisma/prismadb'
 export default async function NewsCard() {
   const news = await prisma.news.findMany()
 
-  if(news.length === 0)
-  {
-    return(
+  if (news.length === 0) {
+    return (
       <>
         <div className="flex justify-center align-bottom h-screen">
           <div className="min-h-full m--10 px-4 py-16 sm:px-6 sm:py-24 grid place-items-center lg:px-8">
             <div className="mx-auto max-w-max">
               <main className="sm:flex">
                 <p className="bg-gradient-to-br from-blue-900 to-cyan-600 bg-clip-text md:text-7xl font-bold tracking-tight text-transparent text-6xl">
-                  Womp Womp
+                  Unavailable
                 </p>
                 <div className="sm:ml-6">
                   <div className="sm:border-l sm:border-gray-200 sm:pl-6">
@@ -44,7 +43,7 @@ export default async function NewsCard() {
 
       {news.map((newItem) => {
         return (
-          
+
           <div key={newItem.id} className='m-3'>
             <div className="w-full p-4 bg-white  border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
               <h5 className="mb-2 text-2xl font-bold text-gray-700 dark:text-white">{newItem.title}</h5>

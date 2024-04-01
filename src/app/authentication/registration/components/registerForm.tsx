@@ -27,12 +27,12 @@ export default function RegisterForm({ centers }: { centers: any }) {
           required
         >
           <option className="bg-gray-500 text-white" value=""></option>
-          <option className="bg-gray-500 text-white" value="centerMember">
+          {/* <option className="bg-gray-500 text-white" value="centerMember">
             Center Member
           </option>
           <option className="bg-gray-500 text-white" value="convert">
             Convert
-          </option>
+          </option> */}
           <option className="bg-gray-500 text-white" value="secretary">
             Secretary
           </option>
@@ -51,12 +51,12 @@ export default function RegisterForm({ centers }: { centers: any }) {
         Already have an account?{" "}
         <a
           href="/authentication/login"
-          className="text-blue-700 hover:underline"
+          className="text-black hover:underline"
         >
           Login
         </a>{" "}
         Or{" "}
-        <a href="/" className="text-blue-700 hover:underline">
+        <a href="/" className="text-black hover:underline">
           Back Home
         </a>
       </div>
