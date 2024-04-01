@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 
-export default function VideoCard({videos } : {videos: any}) {
+export default function VideoCard({ videos }: { videos: any }) {
 
 
   const [videoOpen, setvideoOpen] = useState(false);
@@ -15,7 +15,7 @@ export default function VideoCard({videos } : {videos: any}) {
             <div className="mx-auto max-w-max">
               <main className="sm:flex">
                 <p className="bg-gradient-to-br from-blue-900 to-cyan-600 bg-clip-text md:text-7xl font-bold tracking-tight text-transparent text-6xl">
-                  Womp Womp
+                  Unavailable
                 </p>
                 <div className="sm:ml-6">
                   <div className="sm:border-l sm:border-gray-200 sm:pl-6">
